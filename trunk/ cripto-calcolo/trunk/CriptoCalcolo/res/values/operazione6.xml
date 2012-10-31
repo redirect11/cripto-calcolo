@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="z1">+</string>
+    <string name="z2">+</string>
+    <string name="z3">+</string>
+    <string name="z4">+</string>
+    <string name="z5">+</string>
+    <string name="z6">-</string>
+    <string name="z7">*</string>
+    <string name="z8">+</string>
+    <string name="z9">/</string>
+    <string name="z10">+</string>
+    
+</resources>

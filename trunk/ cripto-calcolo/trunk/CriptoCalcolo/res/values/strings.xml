@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">CriptoCalcolo</string>
+    <string name="popup_title">Scegli un numero</string>
+    <string name="istruction">CriptoCalcolo è un gioco liberamente ispirato a "Calcolo Enigmatico" della Settimana Enigmistica e segue le stesse regole.</string>
+    <string name="cifra">Cifra</string>
+    <string name="operazione">operazione</string>
+    <string name="uguale">uguale</string>
+    <string name="indietro">&lt;-</string>
+    <string name="avanti">-&gt;</string>
+    <string name="rispondi">Rispondi</string>
+    <string name="classifica">Classifica</string>
+    <string name="help">Aiuto</string>
+    <string name="primo">&lt;-|</string>
+    <string name="ultimo">|-&gt;</string>
+    <string name="ultimo_err">Questo è l\'ultimo enigma</string>
+    <string name="primo_err">Questo è il primo enigma</string>
+
+    <string-array name="numero1">
+        <item>54</item>
+        <item>200</item>
+        <item>417</item>
+        <item>60</item>
+        <item>60</item>
+        <item>60</item>
+        <item>60</item>
+        <item>60</item>
+        <item>60</item>
+        <item>60</item>
+    </string-array>
+    <string-array name="numero2">
+        <item>180</item>
+        <item>10</item>
+        <item>319</item>
+        <item>60</item>
+        <item>60</item>
+        <item>60</item>
+        <item>60</item>
+        <item>60</item>
+        <item>60</item>
+        <item>60</item>
+    </string-array>
+    <string-array name="numero3">
+        <item>234</item>
+        <item>20</item>
+        <item>763</item>
+        <item>60</item>
+        <item>60</item>
+        <item>60</item>
+        <item>60</item>
+        <item>60</item>
+        <item>60</item>
+        <item>60</item>
+    </string-array>
+    <string-array name="numero4">
+        <item>810</item>
+        <item>3</item>
+        <item>92</item>
+        <item>60</item>
+        <item>60</item>
+        <item>60</item>
+        <item>60</item>
+        <item>60</item>
+        <item>60</item>
+        <item>60</item>
+    </string-array>
+    <string-array name="numero5">
+        <item>45</item>
+        <item>12</item>
+        <item>4</item>
+        <item>60</item>
+        <item>60</item>
+        <item>60</item>
+        <item>60</item>
+        <item>60</item>
+        <item>60</item>
+        <item>60</item>
+    </string-array>
+    <string-array name="numero6">
+        <item>18</item>
+        <item>36</item>
+        <item>368</item>
+        <item>60</item>
+        <item>60</item>
+        <item>60</item>
+        <item>60</item>
+        <item>60</item>
+        <item>60</item>
+        <item>60</item>
+    </string-array>
+    <string-array name="numero7">
+        <item>864</item>
+        <item>600</item>
+        <item>325</item>
+        <item>60</item>
+        <item>60</item>
+        <item>60</item>
+        <item>60</item>
+        <item>60</item>
+        <item>60</item>
+        <item>60</item>
+    </string-array>
+    <string-array name="numero8">
+        <item>4</item>
+        <item>120</item>
+        <item>323</item>
+        <item>60</item>
+        <item>60</item>
+        <item>60</item>
+        <item>60</item>
+        <item>60</item>
+        <item>60</item>
+        <item>60</item>
+    </string-array>
+    <string-array name="numero9">
+        <item>216</item>
+        <item>720</item>
+        <item>2</item>
+        <item>60</item>
+        <item>60</item>
+        <item>60</item>
+        <item>60</item>
+        <item>60</item>
+        <item>60</item>
+        <item>60</item>
+    </string-array>
+    <string-array name="operazione1">
+        <item>+</item>
+        <item>/</item>
+        <item>+</item>
+        <item>+</item>
+        <item>+</item>
+        <item>+</item>
+        <item>+</item>
+        <item>+</item>
+        <item>+</item>
+        <item>+</item>
+    </string-array>
+    <string-array name="operazione2">
+        <item>+</item>
+        <item>*</item>
+        <item>-</item>
+        <item>+</item>
+        <item>+</item>
+        <item>+</item>
+        <item>+</item>
+        <item>+</item>
+        <item>+</item>
+        <item>+</item>
+    </string-array>
+    <string-array name="operazione3">
+        <item>/</item>
+        <item>*</item>
+        <item>+</item>
+        <item>+</item>
+        <item>+</item>
+        <item>+</item>
+        <item>+</item>
+        <item>+</item>
+        <item>+</item>
+        <item>+</item>
+    </string-array>
+    <string-array name="operazione4">
+        <item>-</item>
+        <item>*</item>
+        <item>/</item>
+        <item>+</item>
+        <item>+</item>
+        <item>+</item>
+        <item>+</item>
+        <item>+</item>
+        <item>+</item>
+        <item>+</item>
+    </string-array>
+    <string-array name="operazione5">
+        <item>/</item>
+        <item>*</item>
+        <item>*</item>
+        <item>+</item>
+        <item>+</item>
+        <item>+</item>
+        <item>+</item>
+        <item>+</item>
+        <item>+</item>
+        <item>+</item>
+    </string-array>
+    <string-array name="operazione6">
+        <item>/</item>
+        <item>+</item>
+        <item>-</item>
+        <item>+</item>
+        <item>+</item>
+        <item>+</item>
+        <item>+</item>
+        <item>+</item>
+        <item>+</item>
+        <item>+</item>
+    </string-array>
+
+</resources>

@@ -25,10 +25,18 @@ public class CriptoCalcoloActivity extends Activity {
     Map<String, String> simboli=new HashMap<String, String>(10);
     // le 27 cifre corrispondenti alla soluzione
     String[] cifre=new String[27];
+    // le 27 cifre trasformate in incognite
     String[] incognite=new String[27];
+    // le 27 rispste date dall'utente
+    String[] risposte=new String[27];
     int num_enigma=0;
     int id_aprente= - 1;
 
+    /**
+     * Apri la finestra di dialogo per scegliere la cifra o cancellare
+     * 
+     * @param view
+     */
     public void apriPopup(View view) {
 	id_aprente=view.getId(); // memorizzo chi ha aperto
 	d=new PopupDialog(this);
@@ -36,6 +44,11 @@ public class CriptoCalcoloActivity extends Activity {
 	d.show();
     }
 
+    /**
+     * Vai all'enigma successivo
+     * 
+     * @param view
+     */
     public void avanti(View view) {
 	if (num_enigma == res.getTextArray(R.array.operazione1).length - 1) {
 	    Toast toast=Toast.makeText(this, R.string.ultimo_err, Toast.LENGTH_SHORT);
@@ -49,7 +62,7 @@ public class CriptoCalcoloActivity extends Activity {
 
     /**
      * Se l'utente ha scelto di cancellare la scelta effettuata allora va ripristinato il simbolo
-     * originale sia nella casella scelta sia nei "fratelli"
+     * originale sia nella casella scelta sia nei "fratelli" (sia graficamente che logicamente)
      */
     private void cancella() {
 	int posAprente=Utils.getPosFromId(id_aprente);
@@ -59,6 +72,7 @@ public class CriptoCalcoloActivity extends Activity {
 	    if (inc_aprente.equals(incognite[j])) {
 		ImageView iv=(ImageView) findViewById(Utils.CIFRE_ID[j]);
 		iv.setImageDrawable(res.getDrawable(inc_draw));
+		risposte[j]=incognite[j];
 	    }
 	}
     }
@@ -88,35 +102,15 @@ public class CriptoCalcoloActivity extends Activity {
 	processaNumero(res.getTextArray(R.array.numero8)[num_enigma].toString(), 21);
 	processaNumero(res.getTextArray(R.array.numero9)[num_enigma].toString(), 24);
 	generaSimboli();
-	processaImmagine(incognite[0], (ImageView) findViewById(R.id.numero1_cifra1));
-	processaImmagine(incognite[1], (ImageView) findViewById(R.id.numero1_cifra2));
-	processaImmagine(incognite[2], (ImageView) findViewById(R.id.numero1_cifra3));
-	processaImmagine(incognite[3], (ImageView) findViewById(R.id.numero2_cifra1));
-	processaImmagine(incognite[4], (ImageView) findViewById(R.id.numero2_cifra2));
-	processaImmagine(incognite[5], (ImageView) findViewById(R.id.numero2_cifra3));
-	processaImmagine(incognite[6], (ImageView) findViewById(R.id.numero3_cifra1));
-	processaImmagine(incognite[7], (ImageView) findViewById(R.id.numero3_cifra2));
-	processaImmagine(incognite[8], (ImageView) findViewById(R.id.numero3_cifra3));
-	processaImmagine(incognite[9], (ImageView) findViewById(R.id.numero4_cifra1));
-	processaImmagine(incognite[10], (ImageView) findViewById(R.id.numero4_cifra2));
-	processaImmagine(incognite[11], (ImageView) findViewById(R.id.numero4_cifra3));
-	processaImmagine(incognite[12], (ImageView) findViewById(R.id.numero5_cifra1));
-	processaImmagine(incognite[13], (ImageView) findViewById(R.id.numero5_cifra2));
-	processaImmagine(incognite[14], (ImageView) findViewById(R.id.numero5_cifra3));
-	processaImmagine(incognite[15], (ImageView) findViewById(R.id.numero6_cifra1));
-	processaImmagine(incognite[16], (ImageView) findViewById(R.id.numero6_cifra2));
-	processaImmagine(incognite[17], (ImageView) findViewById(R.id.numero6_cifra3));
-	processaImmagine(incognite[18], (ImageView) findViewById(R.id.numero7_cifra1));
-	processaImmagine(incognite[19], (ImageView) findViewById(R.id.numero7_cifra2));
-	processaImmagine(incognite[20], (ImageView) findViewById(R.id.numero7_cifra3));
-	processaImmagine(incognite[21], (ImageView) findViewById(R.id.numero8_cifra1));
-	processaImmagine(incognite[22], (ImageView) findViewById(R.id.numero8_cifra2));
-	processaImmagine(incognite[23], (ImageView) findViewById(R.id.numero8_cifra3));
-	processaImmagine(incognite[24], (ImageView) findViewById(R.id.numero9_cifra1));
-	processaImmagine(incognite[25], (ImageView) findViewById(R.id.numero9_cifra2));
-	processaImmagine(incognite[26], (ImageView) findViewById(R.id.numero9_cifra3));
+	for (int i=0; i < incognite.length; i++) {
+	    processaImmagine(incognite[i], (ImageView) findViewById(Utils.CIFRE_ID[i]));
+	}
     }
 
+    /**
+     * Date le soluzioni genera i simboli corrispondenti a ciscuna casella; copia tali valori
+     * nell'array delle risposte
+     */
     private void generaSimboli() {
 	// simbol count: da 0 a 9;
 	simboli=new HashMap<String, String>(10);
@@ -136,6 +130,7 @@ public class CriptoCalcoloActivity extends Activity {
 		incognite[i]="";
 	    }
 	}
+	System.arraycopy(incognite, 0, risposte, 0, incognite.length);
     }
 
     public void indietro(View view) {
@@ -223,6 +218,32 @@ public class CriptoCalcoloActivity extends Activity {
 	}
     }
 
+    /**
+     * Verifica la risposta data
+     * 
+     * @param view
+     */
+    public void rispondi(View view) {
+	// Primo passo: verifico se ha dato tutte le risposte
+	for (int i=0; i < risposte.length; i++) {
+	    if ( ! "".equals(risposte[i]) && (risposte[i].compareTo("A") < 0)) {
+		Toast toast=Toast.makeText(this, R.string.risp_tutti_err, Toast.LENGTH_SHORT);
+		toast.show();
+		return;
+	    }
+	}
+	// secondo passo: confronto le risposte con la soluzione
+	for (int i=0; i < risposte.length; i++) {
+	    if ( ! risposte[i].equals(cifre[i])) {
+		Toast toast=Toast.makeText(this, R.string.risp_sbagliata, Toast.LENGTH_LONG);
+		toast.show();
+		return;
+	    }
+	}
+	Toast toast=Toast.makeText(this, R.string.risp_esatta, Toast.LENGTH_LONG);
+	toast.show();
+    }
+
     public void settaNumero(ImageView iv, int num) {
 	iv.setClickable(true);
 	switch (num) {
@@ -260,13 +281,14 @@ public class CriptoCalcoloActivity extends Activity {
     }
 
     private void sostituisci(int id_numero) {
-	int id_nuovacifra=Utils.convertiNumero(id_numero);
+	int id_nuovacifra=Utils.convertiNumeroDraw(id_numero);
 	int posAprente=Utils.getPosFromId(id_aprente);
 	String inc_aprente=incognite[posAprente];
 	for (int j=0; j < incognite.length; j++) {
 	    if (inc_aprente.equals(incognite[j])) {
 		ImageView iv=(ImageView) findViewById(Utils.CIFRE_ID[j]);
 		iv.setImageDrawable(res.getDrawable(id_nuovacifra));
+		risposte[j]=Utils.convertiNumero(id_numero);
 	    }
 	}
     }
@@ -276,12 +298,24 @@ public class CriptoCalcoloActivity extends Activity {
 	generaSchermata();
     }
 
+    /**
+     * Può fare una delle tre cose
+     * <ul>
+     * <li>Chiamare cancella
+     * <li>Chiamare sostituisci
+     * <li>Chiudere la popup
+     * </ul>
+     * La terza è fatta in ogni caso
+     * 
+     * @param view: l'imgButton premuto
+     */
     public void vai(View view) {
 	if (R.id.imageViewC == view.getId()) {
 	    cancella();
 	}
 	else if (R.id.imageViewB == view.getId()) {
 	    d.dismiss();
+	    return;
 	}
 	else {
 	    sostituisci(view.getId());

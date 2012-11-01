@@ -16,12 +16,42 @@ public class Utils {
 	R.id.numero8_cifra1, R.id.numero9_cifra1, R.id.numero9_cifra2, R.id.numero9_cifra3 };
 
     /**
+     * Trova il numero associato all'id dell'immagine premuta in popup
+     * 
+     * @param id_numero: l'id premuto in popup
+     * @return la cifra (numero da 0 a 9)
+     */
+    public static String convertiNumero(int id_numero) {
+	switch (id_numero) {
+	    case R.id.imageView0:
+		return "0";
+	    case R.id.imageView1:
+		return "1";
+	    case R.id.imageView2:
+		return "2";
+	    case R.id.imageView3:
+		return "3";
+	    case R.id.imageView4:
+		return "4";
+	    case R.id.imageView5:
+		return "5";
+	    case R.id.imageView6:
+		return "6";
+	    case R.id.imageView7:
+		return "7";
+	    case R.id.imageView8:
+		return "8";
+	}
+	return "9";
+    }
+
+    /**
      * Trova l'icona associata all'id dell'immagine premuta in popup
      * 
      * @param id_numero: l'id premuto in popup
      * @return l'icona associata
      */
-    public static int convertiNumero(int id_numero) {
+    public static int convertiNumeroDraw(int id_numero) {
 	switch (id_numero) {
 	    case R.id.imageView0:
 		return R.drawable.zero;

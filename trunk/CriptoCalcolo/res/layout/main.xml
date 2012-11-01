@@ -1,0 +1,421 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#FFFFFF"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/riga1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+
+        <ImageView
+            android:id="@+id/numero1_cifra1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/cifra"
+            android:onClick="apriPopup" />
+
+        <ImageView
+            android:id="@+id/numero1_cifra2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/cifra"
+            android:onClick="apriPopup" />
+
+        <ImageView
+            android:id="@+id/numero1_cifra3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/cifra"
+            android:onClick="apriPopup" />
+
+        <ImageView
+            android:id="@+id/operazione1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/operazione"
+            android:onClick="apriPopup" />
+
+        <ImageView
+            android:id="@+id/numero2_cifra1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/cifra"
+            android:onClick="apriPopup" />
+
+        <ImageView
+            android:id="@+id/numero2_cifra2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/cifra" />
+
+        <ImageView
+            android:id="@+id/numero2_cifra3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/cifra"
+            android:onClick="apriPopup" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/uguale"
+            android:src="@drawable/uguale" />
+
+        <ImageView
+            android:id="@+id/numero3_cifra1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/cifra"
+            android:onClick="apriPopup" />
+
+        <ImageView
+            android:id="@+id/numero3_cifra2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/cifra"
+            android:onClick="apriPopup" />
+
+        <ImageView
+            android:id="@+id/numero3_cifra3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/cifra"
+            android:onClick="apriPopup" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/riga2"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/uguale"
+            android:src="@drawable/vuoto" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/uguale"
+            android:src="@drawable/vuoto" />
+
+        <ImageView
+            android:id="@+id/operazione2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/operazione" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/uguale"
+            android:src="@drawable/vuoto" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/uguale"
+            android:src="@drawable/vuoto" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/uguale"
+            android:src="@drawable/vuoto" />
+
+        <ImageView
+            android:id="@+id/operazione3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/operazione" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/uguale"
+            android:src="@drawable/vuoto" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/uguale"
+            android:src="@drawable/vuoto" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/uguale"
+            android:src="@drawable/vuoto" />
+
+        <ImageView
+            android:id="@+id/operazione4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/operazione" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/riga3"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+
+        <ImageView
+            android:id="@+id/numero4_cifra1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/cifra"
+            android:onClick="apriPopup" />
+
+        <ImageView
+            android:id="@+id/numero4_cifra2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/cifra"
+            android:onClick="apriPopup" />
+
+        <ImageView
+            android:id="@+id/numero4_cifra3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/cifra"
+            android:onClick="apriPopup" />
+
+        <ImageView
+            android:id="@+id/operazione5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/operazione" />
+
+        <ImageView
+            android:id="@+id/numero5_cifra1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/cifra"
+            android:onClick="apriPopup" />
+
+        <ImageView
+            android:id="@+id/numero5_cifra2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/cifra"
+            android:onClick="apriPopup" />
+
+        <ImageView
+            android:id="@+id/numero5_cifra3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/cifra"
+            android:onClick="apriPopup" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/uguale"
+            android:src="@drawable/uguale" />
+
+        <ImageView
+            android:id="@+id/numero6_cifra1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/cifra"
+            android:onClick="apriPopup" />
+
+        <ImageView
+            android:id="@+id/numero6_cifra2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/cifra"
+            android:onClick="apriPopup" />
+
+        <ImageView
+            android:id="@+id/numero6_cifra3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/cifra"
+            android:onClick="apriPopup" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/riga4"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+
+        <ImageView
+            android:id="@+id/linea"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/cifra"
+            android:src="@drawable/meno" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/riga5"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+
+        <ImageView
+            android:id="@+id/numero7_cifra1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/cifra"
+            android:onClick="apriPopup" />
+
+        <ImageView
+            android:id="@+id/numero7_cifra2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/cifra"
+            android:onClick="apriPopup" />
+
+        <ImageView
+            android:id="@+id/numero7_cifra3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/cifra"
+            android:onClick="apriPopup" />
+
+        <ImageView
+            android:id="@+id/operazione6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/operazione" />
+
+        <ImageView
+            android:id="@+id/numero8_cifra1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/cifra"
+            android:onClick="apriPopup" />
+
+        <ImageView
+            android:id="@+id/numero8_cifra2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/cifra"
+            android:onClick="apriPopup" />
+
+        <ImageView
+            android:id="@+id/numero8_cifra3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/cifra"
+            android:onClick="apriPopup" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/uguale"
+            android:src="@drawable/uguale" />
+
+        <ImageView
+            android:id="@+id/numero9_cifra1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/cifra"
+            android:onClick="apriPopup" />
+
+        <ImageView
+            android:id="@+id/numero9_cifra2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/cifra"
+            android:onClick="apriPopup" />
+
+        <ImageView
+            android:id="@+id/numero9_cifra3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/cifra"
+            android:onClick="apriPopup" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/riga6"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+
+        <Button
+            android:id="@+id/primo"
+            style="@style/Button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="primo"
+            android:text="@string/primo" />
+
+        <Button
+            android:id="@+id/indietro"
+            style="@style/Button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="indietro"
+            android:text="@string/indietro" />
+
+        <TextView
+            android:id="@+id/contatore"
+            style="@style/EditText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <Button
+            android:id="@+id/avanti"
+            style="@style/Button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="avanti"
+            android:text="@string/avanti" />
+
+        <Button
+            android:id="@+id/ultimo"
+            style="@style/Button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="ultimo"
+            android:text="@string/ultimo" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/riga7"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+
+        <Button
+            style="@style/Button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:onClick="apriAiuto"
+            android:text="@string/help" />
+
+        <Button
+            style="@style/Button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:onClick="rispondi"
+            android:text="@string/rispondi" />
+
+        <Button
+            style="@style/Button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:onClick="classifica"
+            android:text="@string/classifica" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/riga8"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+    </LinearLayout>
+
+</LinearLayout>

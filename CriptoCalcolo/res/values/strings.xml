@@ -3,7 +3,7 @@
 
     <string name="app_name">CriptoCalcolo</string>
     <string name="popup_title">Scegli un numero</string>
-    <string name="istruction">CriptoCalcolo è un gioco liberamente ispirato a "Calcolo Enigmatico" della Settimana Enigmistica e segue le stesse regole.</string>
+    <string name="istruction">CriptoCalcolo è un gioco liberamente ispirato a "Calcolo Enigmatico" della Settimana Enigmistica e segue le stesse regole.\n\nDevi associare ad ogni incognita la cifra giusta da 0 a 9, aiutandoti con le operazioni inserite. A schema risolto premi Rispondi per verificare.\n\nTap sull\'incognita per scegliere la cifra da associare o per cancellare la scelta fatta.</string>
     <string name="cifra">Cifra</string>
     <string name="operazione">operazione</string>
     <string name="uguale">uguale</string>
@@ -201,7 +201,7 @@
         <item>+</item>
     </string-array>
     <string name="aiuto_title">Aiuto</string>
-    <string name="site">http://goo.gl/qk3iC</string>
+    <string name="site">Sito</string>
     <string name="ok">Ok</string>
 
 </resources>

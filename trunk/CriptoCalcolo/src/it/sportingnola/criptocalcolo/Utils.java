@@ -5,6 +5,9 @@ public class Utils {
     static public final String MENO="-";
     static public final String PER="*";
     static public final String DIVISO="/";
+    static public final String[] CIFRE={"1", "2", "3", "4", "5", "6", "7", "8", "9", "0" };
+    static public final int[] CIFRE_DRAW={R.drawable.uno, R.drawable.due, R.drawable.tre, R.drawable.quattro,
+	R.drawable.cinque, R.drawable.sei, R.drawable.sette, R.drawable.otto, R.drawable.nove, R.drawable.zero };
     static public final String[] SIMBOLI={"A", "B", "C", "D", "E", "F", "G", "H", "L", "N" };
     static public final int[] SIMBOLI_DRAW={R.drawable.a, R.drawable.b, R.drawable.c, R.drawable.d, R.drawable.e,
 	R.drawable.f, R.drawable.g, R.drawable.h, R.drawable.l, R.drawable.n };
@@ -14,6 +17,8 @@ public class Utils {
 	R.id.numero5_cifra2, R.id.numero5_cifra3, R.id.numero6_cifra1, R.id.numero6_cifra2, R.id.numero6_cifra3,
 	R.id.numero7_cifra1, R.id.numero7_cifra2, R.id.numero7_cifra3, R.id.numero8_cifra2, R.id.numero8_cifra3,
 	R.id.numero8_cifra1, R.id.numero9_cifra1, R.id.numero9_cifra2, R.id.numero9_cifra3 };
+    public static String PREFS_NAME="CriptoCalcoloAnsw";
+    public static String ENIGMA="ENIGMA";
 
     /**
      * Trova il numero associato all'id dell'immagine premuta in popup
@@ -75,6 +80,29 @@ public class Utils {
 	return R.drawable.nove;
     }
 
+    /**
+     * Data una cifra in forma di stringa restituisce l'intero corrispondente al drawable
+     * dell'immagine associata
+     * 
+     * @param incognita: la cifra come stringa
+     * @return il drawable associato all'incognita
+     */
+    public static int getCifraDraw(String incognita) {
+	for (int i=0; i < CIFRE.length; i++) {
+	    if (CIFRE[i].equals(incognita)) {
+		return CIFRE_DRAW[i];
+	    }
+	}
+	return CIFRE_DRAW[0];
+    }
+
+    /**
+     * Data un'incognita in forma di stringa restituisce l'intero corrispondente al drawable
+     * dell'immagine associata
+     * 
+     * @param incognita: l'incognita come stringa
+     * @return il drawable associato all'incognita
+     */
     public static int getIncDraw(String incognita) {
 	for (int i=0; i < SIMBOLI.length; i++) {
 	    if (SIMBOLI[i].equals(incognita)) {
@@ -82,7 +110,6 @@ public class Utils {
 	    }
 	}
 	return SIMBOLI_DRAW[0];
-
     }
 
     /**

@@ -16,6 +16,9 @@
     <string name="ultimo">|-&gt;</string>
     <string name="ultimo_err">Questo è l\'ultimo enigma</string>
     <string name="primo_err">Questo è il primo enigma</string>
+    <string name="risp_tutti_err">Sostituisci prima tutti i simboli con le cifre</string>
+    <string name="risp_sbagliata">Risposta errata: ritenta!</string>
+    <string name="risp_esatta">Risposta esatta: complimenti!</string>
 
     <string-array name="numero1">
         <item>54</item>

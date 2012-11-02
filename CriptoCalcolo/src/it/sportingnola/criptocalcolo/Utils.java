@@ -5,20 +5,20 @@ public class Utils {
     static public final String MENO="-";
     static public final String PER="*";
     static public final String DIVISO="/";
-    static public final String[] CIFRE={"1", "2", "3", "4", "5", "6", "7", "8", "9", "0" };
-    static public final int[] CIFRE_DRAW={R.drawable.uno, R.drawable.due, R.drawable.tre, R.drawable.quattro,
+    static protected final String[] CIFRE={"1", "2", "3", "4", "5", "6", "7", "8", "9", "0" };
+    static protected final int[] CIFRE_DRAW={R.drawable.uno, R.drawable.due, R.drawable.tre, R.drawable.quattro,
 	R.drawable.cinque, R.drawable.sei, R.drawable.sette, R.drawable.otto, R.drawable.nove, R.drawable.zero };
-    static public final String[] SIMBOLI={"A", "B", "C", "D", "E", "F", "G", "H", "L", "N" };
-    static public final int[] SIMBOLI_DRAW={R.drawable.a, R.drawable.b, R.drawable.c, R.drawable.d, R.drawable.e,
+    static protected final String[] SIMBOLI={"A", "B", "C", "D", "E", "F", "G", "H", "L", "N" };
+    static protected final int[] SIMBOLI_DRAW={R.drawable.a, R.drawable.b, R.drawable.c, R.drawable.d, R.drawable.e,
 	R.drawable.f, R.drawable.g, R.drawable.h, R.drawable.l, R.drawable.n };
-    static public final int[] CIFRE_ID={R.id.numero1_cifra1, R.id.numero1_cifra2, R.id.numero1_cifra3,
+    static protected final int[] CIFRE_ID={R.id.numero1_cifra1, R.id.numero1_cifra2, R.id.numero1_cifra3,
 	R.id.numero2_cifra1, R.id.numero2_cifra2, R.id.numero2_cifra3, R.id.numero3_cifra1, R.id.numero3_cifra2,
 	R.id.numero3_cifra3, R.id.numero4_cifra1, R.id.numero4_cifra2, R.id.numero4_cifra3, R.id.numero5_cifra1,
 	R.id.numero5_cifra2, R.id.numero5_cifra3, R.id.numero6_cifra1, R.id.numero6_cifra2, R.id.numero6_cifra3,
-	R.id.numero7_cifra1, R.id.numero7_cifra2, R.id.numero7_cifra3, R.id.numero8_cifra2, R.id.numero8_cifra3,
-	R.id.numero8_cifra1, R.id.numero9_cifra1, R.id.numero9_cifra2, R.id.numero9_cifra3 };
-    public static String PREFS_NAME="CriptoCalcoloAnsw";
-    public static String ENIGMA="ENIGMA";
+	R.id.numero7_cifra1, R.id.numero7_cifra2, R.id.numero7_cifra3, R.id.numero8_cifra1, R.id.numero8_cifra2,
+	R.id.numero8_cifra3, R.id.numero9_cifra1, R.id.numero9_cifra2, R.id.numero9_cifra3 };
+    public static final String PREFS_NAME="CriptoCalcoloAnsw";
+    public static final String ENIGMA="ENIGMA";
 
     /**
      * Trova il numero associato all'id dell'immagine premuta in popup

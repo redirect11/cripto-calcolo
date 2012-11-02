@@ -24,7 +24,7 @@
         <item>54</item>
         <item>200</item>
         <item>417</item>
-        <item>60</item>
+        <item>96</item>
         <item>60</item>
         <item>60</item>
         <item>60</item>
@@ -36,7 +36,7 @@
         <item>180</item>
         <item>10</item>
         <item>319</item>
-        <item>60</item>
+        <item>76</item>
         <item>60</item>
         <item>60</item>
         <item>60</item>
@@ -48,7 +48,7 @@
         <item>234</item>
         <item>20</item>
         <item>763</item>
-        <item>60</item>
+        <item>172</item>
         <item>60</item>
         <item>60</item>
         <item>60</item>
@@ -60,7 +60,7 @@
         <item>810</item>
         <item>3</item>
         <item>92</item>
-        <item>60</item>
+        <item>322</item>
         <item>60</item>
         <item>60</item>
         <item>60</item>
@@ -72,7 +72,7 @@
         <item>45</item>
         <item>12</item>
         <item>4</item>
-        <item>60</item>
+        <item>2</item>
         <item>60</item>
         <item>60</item>
         <item>60</item>
@@ -84,7 +84,7 @@
         <item>18</item>
         <item>36</item>
         <item>368</item>
-        <item>60</item>
+        <item>161</item>
         <item>60</item>
         <item>60</item>
         <item>60</item>
@@ -96,7 +96,7 @@
         <item>864</item>
         <item>600</item>
         <item>325</item>
-        <item>60</item>
+        <item>418</item>
         <item>60</item>
         <item>60</item>
         <item>60</item>
@@ -108,7 +108,7 @@
         <item>4</item>
         <item>120</item>
         <item>323</item>
-        <item>60</item>
+        <item>38</item>
         <item>60</item>
         <item>60</item>
         <item>60</item>
@@ -120,7 +120,7 @@
         <item>216</item>
         <item>720</item>
         <item>2</item>
-        <item>60</item>
+        <item>11</item>
         <item>60</item>
         <item>60</item>
         <item>60</item>
@@ -156,7 +156,7 @@
         <item>/</item>
         <item>*</item>
         <item>+</item>
-        <item>+</item>
+        <item>/</item>
         <item>+</item>
         <item>+</item>
         <item>+</item>
@@ -168,7 +168,7 @@
         <item>-</item>
         <item>*</item>
         <item>/</item>
-        <item>+</item>
+        <item>-</item>
         <item>+</item>
         <item>+</item>
         <item>+</item>
@@ -180,7 +180,7 @@
         <item>/</item>
         <item>*</item>
         <item>*</item>
-        <item>+</item>
+        <item>/</item>
         <item>+</item>
         <item>+</item>
         <item>+</item>
@@ -192,7 +192,7 @@
         <item>/</item>
         <item>+</item>
         <item>-</item>
-        <item>+</item>
+        <item>/</item>
         <item>+</item>
         <item>+</item>
         <item>+</item>

@@ -3,7 +3,7 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:background="#FFFFFF"
-    android:orientation="vertical" >
+    android:orientation="vertical" android:id="@+id/righe">
 
     <LinearLayout
         android:id="@+id/riga1"
@@ -49,7 +49,7 @@
             android:id="@+id/numero2_cifra2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:contentDescription="@string/cifra" />
+            android:contentDescription="@string/cifra" android:onClick="apriPopup"/>
 
         <ImageView
             android:id="@+id/numero2_cifra3"
@@ -357,12 +357,13 @@
             android:onClick="indietro"
             android:text="@string/indietro" />
 
-        <TextView
+        <Button
             android:id="@+id/contatore"
-            style="@style/EditText"
+            style="@style/Button"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1" />
+            android:layout_weight="2"
+            android:onClick="scegliEnigma" />
 
         <Button
             android:id="@+id/avanti"

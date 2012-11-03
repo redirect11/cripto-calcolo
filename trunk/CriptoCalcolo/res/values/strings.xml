@@ -2,30 +2,31 @@
 <resources>
 
     <string name="app_name">CriptoCalcolo</string>
-    <string name="popup_title">Scegli un numero</string>
-    <string name="istruction">CriptoCalcolo è un gioco liberamente ispirato a "Calcolo Enigmatico" della Settimana Enigmistica e segue le stesse regole.\n\nDevi associare ad ogni incognita la cifra giusta da 0 a 9, aiutandoti con le operazioni inserite. A schema risolto premi Rispondi per verificare.\n\nTap sull\'incognita per scegliere la cifra da associare o per cancellare la scelta fatta.</string>
-    <string name="cifra">Cifra</string>
-    <string name="operazione">operazione</string>
-    <string name="uguale">uguale</string>
-    <string name="indietro">&lt;-</string>
     <string name="avanti">-&gt;</string>
-    <string name="rispondi">Rispondi</string>
+    <string name="cifra">Cifra</string>
     <string name="classifica">Classifica</string>
     <string name="help">Aiuto</string>
+    <string name="indietro">&lt;-</string>
+    <string name="istruction">CriptoCalcolo è un gioco liberamente ispirato a "Calcolo Enigmatico" della Settimana Enigmistica e segue le stesse regole.\n\nDevi associare ad ogni incognita la cifra giusta da 0 a 9, aiutandoti con le operazioni inserite. A schema risolto premi Rispondi per verificare.\n\nTap sull\'incognita per scegliere la cifra da associare o per cancellare la scelta fatta.</string>
+    <string name="operazione">operazione</string>
+    <string name="popup_title">Scegli un numero</string>
     <string name="primo">&lt;-|</string>
-    <string name="ultimo">|-&gt;</string>
-    <string name="ultimo_err">Questo è l\'ultimo enigma</string>
     <string name="primo_err">Questo è il primo enigma</string>
+    <string name="risolto">Risolto!</string>
     <string name="risp_tutti_err">Sostituisci prima tutti i simboli con le cifre</string>
     <string name="risp_sbagliata">Risposta errata: ritenta!</string>
     <string name="risp_esatta">Risposta esatta: complimenti!</string>
+    <string name="rispondi">Rispondi</string>
+    <string name="uguale">uguale</string>
+    <string name="ultimo">|-&gt;</string>
+    <string name="ultimo_err">Questo è l\'ultimo enigma</string>
 
     <string-array name="numero1">
         <item>54</item>
         <item>200</item>
         <item>417</item>
         <item>96</item>
-        <item>60</item>
+        <item>220</item>
         <item>60</item>
         <item>60</item>
         <item>60</item>
@@ -37,7 +38,7 @@
         <item>10</item>
         <item>319</item>
         <item>76</item>
-        <item>60</item>
+        <item>354</item>
         <item>60</item>
         <item>60</item>
         <item>60</item>
@@ -49,7 +50,7 @@
         <item>20</item>
         <item>763</item>
         <item>172</item>
-        <item>60</item>
+        <item>574</item>
         <item>60</item>
         <item>60</item>
         <item>60</item>
@@ -61,7 +62,7 @@
         <item>3</item>
         <item>92</item>
         <item>322</item>
-        <item>60</item>
+        <item>22</item>
         <item>60</item>
         <item>60</item>
         <item>60</item>
@@ -73,7 +74,7 @@
         <item>12</item>
         <item>4</item>
         <item>2</item>
-        <item>60</item>
+        <item>6</item>
         <item>60</item>
         <item>60</item>
         <item>60</item>
@@ -85,7 +86,7 @@
         <item>36</item>
         <item>368</item>
         <item>161</item>
-        <item>60</item>
+        <item>16</item>
         <item>60</item>
         <item>60</item>
         <item>60</item>
@@ -97,7 +98,7 @@
         <item>600</item>
         <item>325</item>
         <item>418</item>
-        <item>60</item>
+        <item>10</item>
         <item>60</item>
         <item>60</item>
         <item>60</item>
@@ -109,7 +110,7 @@
         <item>120</item>
         <item>323</item>
         <item>38</item>
-        <item>60</item>
+        <item>59</item>
         <item>60</item>
         <item>60</item>
         <item>60</item>
@@ -121,7 +122,7 @@
         <item>720</item>
         <item>2</item>
         <item>11</item>
-        <item>60</item>
+        <item>590</item>
         <item>60</item>
         <item>60</item>
         <item>60</item>
@@ -145,7 +146,7 @@
         <item>*</item>
         <item>-</item>
         <item>+</item>
-        <item>+</item>
+        <item>/</item>
         <item>+</item>
         <item>+</item>
         <item>+</item>
@@ -157,7 +158,7 @@
         <item>*</item>
         <item>+</item>
         <item>/</item>
-        <item>+</item>
+        <item>/</item>
         <item>+</item>
         <item>+</item>
         <item>+</item>
@@ -181,7 +182,7 @@
         <item>*</item>
         <item>*</item>
         <item>/</item>
-        <item>+</item>
+        <item>-</item>
         <item>+</item>
         <item>+</item>
         <item>+</item>
@@ -193,7 +194,7 @@
         <item>+</item>
         <item>-</item>
         <item>/</item>
-        <item>+</item>
+        <item>*</item>
         <item>+</item>
         <item>+</item>
         <item>+</item>
@@ -202,6 +203,6 @@
     </string-array>
     <string name="aiuto_title">Aiuto</string>
     <string name="site">Sito</string>
-    <string name="ok">Ok</string>
+    <string name="ok">OK</string>
 
 </resources>

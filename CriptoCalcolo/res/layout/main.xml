@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/righe"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:background="#FFFFFF"
-    android:orientation="vertical" android:id="@+id/righe">
+    android:orientation="vertical" >
 
     <LinearLayout
         android:id="@+id/riga1"
@@ -49,7 +50,8 @@
             android:id="@+id/numero2_cifra2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:contentDescription="@string/cifra" android:onClick="apriPopup"/>
+            android:contentDescription="@string/cifra"
+            android:onClick="apriPopup" />
 
         <ImageView
             android:id="@+id/numero2_cifra3"
@@ -246,11 +248,16 @@
         android:layout_height="wrap_content" >
 
         <ImageView
-            android:id="@+id/linea"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:contentDescription="@string/cifra"
-            android:src="@drawable/meno" />
+            android:contentDescription="@string/linea"
+            android:layout_width="fill_parent"
+            android:layout_height="4dp"
+            android:background="#000000"
+            android:paddingBottom="2dp"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:paddingTop="2dp"
+            android:scaleType="fitXY"
+            android:src="@android:drawable/divider_horizontal_dark" />
     </LinearLayout>
 
     <LinearLayout
@@ -416,7 +423,7 @@
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/riga8"
+        android:id="@+id/ads"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content" >
     </LinearLayout>

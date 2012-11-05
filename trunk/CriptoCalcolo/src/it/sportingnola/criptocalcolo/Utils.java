@@ -19,6 +19,8 @@ public class Utils {
 	R.id.numero8_cifra3, R.id.numero9_cifra1, R.id.numero9_cifra2, R.id.numero9_cifra3 };
     public static final String PREFS_NAME="CriptoCalcoloAnsw";
     public static final String ENIGMA="ENIGMA";
+    public static final String RISOLTI="RISOLTI";
+    public static final String MY_AD_UNIT_ID="a14dc0415940c7e";
 
     /**
      * Trova il numero associato all'id dell'immagine premuta in popup
@@ -162,11 +164,11 @@ public class Utils {
 		return 19;
 	    case R.id.numero7_cifra3:
 		return 20;
-	    case R.id.numero8_cifra2:
-		return 21;
-	    case R.id.numero8_cifra3:
-		return 22;
 	    case R.id.numero8_cifra1:
+		return 21;
+	    case R.id.numero8_cifra2:
+		return 22;
+	    case R.id.numero8_cifra3:
 		return 23;
 	    case R.id.numero9_cifra1:
 		return 24;

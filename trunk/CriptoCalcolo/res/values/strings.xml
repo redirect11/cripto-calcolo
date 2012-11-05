@@ -8,6 +8,7 @@
     <string name="help">Aiuto</string>
     <string name="indietro">&lt;-</string>
     <string name="istruction">CriptoCalcolo è un gioco liberamente ispirato a "Calcolo Enigmatico" della Settimana Enigmistica e segue le stesse regole.\n\nDevi associare ad ogni incognita la cifra giusta da 0 a 9, aiutandoti con le operazioni inserite. A schema risolto premi Rispondi per verificare.\n\nTap sull\'incognita per scegliere la cifra da associare o per cancellare la scelta fatta.</string>
+    <string name="linea">Linea</string>
     <string name="operazione">operazione</string>
     <string name="popup_title">Scegli un numero</string>
     <string name="primo">&lt;-|</string>

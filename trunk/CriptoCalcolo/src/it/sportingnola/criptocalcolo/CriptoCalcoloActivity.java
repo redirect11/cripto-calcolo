@@ -9,23 +9,20 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
 import android.content.res.Resources;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
-import android.view.Display;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.TextView;
 import android.widget.Toast;
+import com.google.ads.AdRequest;
+import com.google.ads.AdSize;
+import com.google.ads.AdView;
 
 public class CriptoCalcoloActivity extends Activity {
     PopupDialog d;
-    int width; // dimensione dello schermo
-    int height;
-    int img_width; // dimensione dell'immagine
-    int img_height;
     Resources res;
     // ad cifra da 0 a 9 (rappresentata come stringa) è associato un simbolo
     Map<String, String> simboli=new HashMap<String, String>(10);
@@ -39,6 +36,13 @@ public class CriptoCalcoloActivity extends Activity {
     int id_aprente= - 1;
 
     boolean risolto;
+
+    private void abilitaRispondi() {
+	Button rispondi=(Button) findViewById(R.id.rispondi);
+	rispondi.setEnabled(true);
+	rispondi.setBackgroundColor(Color.GRAY);
+	rispondi.setText(R.string.rispondi);
+    }
 
     public void apriAiuto(View view) {
 	AlertDialog.Builder builder=new AlertDialog.Builder(this);
@@ -70,6 +74,7 @@ public class CriptoCalcoloActivity extends Activity {
 	id_aprente=view.getId(); // memorizzo chi ha aperto
 	d=new PopupDialog(this);
 	d.setContentView(R.layout.popup);
+	d.setTitle(getString(R.string.popup_title));
 	d.show();
     }
 
@@ -118,6 +123,30 @@ public class CriptoCalcoloActivity extends Activity {
 	}
     }
 
+    public void classifica(View view) {
+	// TODO: scoreloop
+    }
+
+    private void disabilitaRispondi() {
+	Button rispondi=(Button) findViewById(R.id.rispondi);
+	rispondi.setEnabled(false);
+	rispondi.setBackgroundColor(Color.GREEN);
+	rispondi.setText(R.string.risolto);
+    }
+
+    private void disegnaContatore(SharedPreferences settings) {
+	int risolti=0;
+	try {
+	    risolti=Integer.parseInt(settings.getString(Utils.RISOLTI, "0"));
+	}
+	catch (NumberFormatException nfe) {
+	    risolti=0;
+	}
+	Button contatore=(Button) findViewById(R.id.contatore);
+	contatore.setText((num_enigma + 1) + "/" + res.getTextArray(R.array.operazione1).length + " (" + risolti + " "
+	    + getString(R.string.ok) + ")");
+    }
+
     /**
      * Genera la schermata per l'enigma n. num_enigma
      */
@@ -125,10 +154,13 @@ public class CriptoCalcoloActivity extends Activity {
 	SharedPreferences settings=getSharedPreferences(Utils.PREFS_NAME, MODE_PRIVATE);
 	// se è risolto non si può più rispondere
 	risolto=settings.getBoolean(Utils.ENIGMA + "_" + num_enigma + "_risp", false);
-	Button bRisp=(Button) findViewById(R.id.rispondi);
-	bRisp.setClickable( ! risolto);
-	TextView tv=(TextView) findViewById(R.id.contatore);
-	tv.setText((num_enigma + 1) + " / " + res.getTextArray(R.array.operazione1).length);
+	if (risolto) {
+	    disabilitaRispondi();
+	}
+	else {
+	    abilitaRispondi();
+	}
+	disegnaContatore(settings);
 	processaOperazione(res.getTextArray(R.array.operazione1)[num_enigma].toString(),
 	    (ImageView) findViewById(R.id.operazione1));
 	processaOperazione(res.getTextArray(R.array.operazione2)[num_enigma].toString(),
@@ -201,6 +233,8 @@ public class CriptoCalcoloActivity extends Activity {
     public void onCreate(Bundle savedInstanceState) {
 	super.onCreate(savedInstanceState);
 	setContentView(R.layout.main);
+	View view=findViewById(android.R.id.content).getRootView();
+	view.setKeepScreenOn(true);
 	setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
 	res=getResources();
 	SharedPreferences settings=getSharedPreferences(Utils.PREFS_NAME, MODE_PRIVATE);
@@ -212,23 +246,15 @@ public class CriptoCalcoloActivity extends Activity {
 	    num_enigma=0;
 	}
 	generaSchermata();
-	Display display=getWindowManager().getDefaultDisplay();
-	width=display.getWidth();
-	height=display.getHeight();
-	img_width=width / 16;
-	img_height=height / 9;
-	LinearLayout.LayoutParams params=new LinearLayout.LayoutParams(img_width, img_height);
-	LinearLayout ll=(LinearLayout) LayoutInflater.from(this).inflate(R.layout.main, null);
-	for (int j=0; j < ll.getChildCount(); j++) {
-	    LinearLayout riga=(LinearLayout) ll.getChildAt(j);
-	    for (int i=0; i < riga.getChildCount(); i++) {
-		if (riga.getChildAt(i) instanceof ImageView) {
-		    ImageView iv=(ImageView) riga.getChildAt(i);
-		    iv.setLayoutParams(params);
-		    iv.setScaleType(ImageView.ScaleType.CENTER_CROP);
-		}
-	    }
-	}
+	// Create the adView
+	AdView adView=new AdView(this, AdSize.BANNER, Utils.MY_AD_UNIT_ID);
+	// Lookup your LinearLayout assuming it’s been given
+	// the attribute android:id="@+id/mainLayout"
+	LinearLayout layout=(LinearLayout) findViewById(R.id.ads);
+	// Add the adView to it
+	layout.addView(adView);
+	// Initiate a generic request to load it with an ad
+	adView.loadAd(new AdRequest());
     }
 
     @Override
@@ -300,7 +326,8 @@ public class CriptoCalcoloActivity extends Activity {
 	// Primo passo: verifico se ha dato tutte le risposte
 	for (int i=0; i < risposte.length; i++) {
 	    if ( ! "".equals(risposte[i]) && (risposte[i].compareTo("A") >= 0)) {
-		Toast toast=Toast.makeText(this, R.string.risp_tutti_err, Toast.LENGTH_SHORT);
+		// risposta non data: lo scrivo ed esco
+		Toast toast=Toast.makeText(this, R.string.risp_tutti_err, Toast.LENGTH_LONG);
 		toast.show();
 		return;
 	    }
@@ -308,17 +335,32 @@ public class CriptoCalcoloActivity extends Activity {
 	// secondo passo: confronto le risposte con la soluzione
 	for (int i=0; i < risposte.length; i++) {
 	    if ( ! risposte[i].equals(cifre[i])) {
+		// risposta errata: lo scrivo ed esco
 		Toast toast=Toast.makeText(this, R.string.risp_sbagliata, Toast.LENGTH_LONG);
 		toast.show();
 		return;
 	    }
 	}
+	// ok, risposta esatta: lo scrivo
 	Toast toast=Toast.makeText(this, R.string.risp_esatta, Toast.LENGTH_LONG);
 	toast.show();
+	// scrivo nelle prefs che l'enigma e risolto e aumento il contatore degli enigmi risolti
 	SharedPreferences settings=getSharedPreferences(Utils.PREFS_NAME, MODE_PRIVATE);
 	SharedPreferences.Editor editor=settings.edit();
 	editor.putBoolean(Utils.ENIGMA + "_" + num_enigma + "_risp", true);
+	int risolti=0;
+	try {
+	    risolti=Integer.parseInt(settings.getString(Utils.RISOLTI, "0"));
+	}
+	catch (NumberFormatException nfe) {
+	    risolti=0;
+	}
+	risolti++;
+	editor.putString(Utils.RISOLTI, "" + risolti);
 	editor.commit();
+	disabilitaRispondi();
+	disegnaContatore(settings);
+	// TODO: scoreloop
     }
 
     /**
@@ -332,6 +374,10 @@ public class CriptoCalcoloActivity extends Activity {
 	}
 	editor.putString(Utils.ENIGMA, "" + num_enigma);
 	editor.commit();
+    }
+
+    public void scegliEnigma(View view) {
+	// TODO
     }
 
     /**

@@ -26,7 +26,7 @@
         </activity>
         <activity
             android:name="com.google.ads.AdActivity"
-            android:configChanges="keyboard|keyboardHidden|orientation" />
+            android:configChanges="keyboard|keyboardHidden|orientation|uiMode|screenSize|smallestScreenSize" />
     </application>
 
 </manifest>

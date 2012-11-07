@@ -33,14 +33,14 @@ public class CriptoCalcoloActivity extends Activity {
     // le 27 rispste date dall'utente
     String[] risposte=new String[27];
     int num_enigma=0;
-    int id_aprente= - 1;
+    int id_aprente=-1;
 
     boolean risolto;
 
     private void abilitaRispondi() {
 	Button rispondi=(Button) findViewById(R.id.rispondi);
 	rispondi.setEnabled(true);
-	rispondi.setBackgroundColor(Color.GRAY);
+	rispondi.setBackgroundColor(Color.RED);
 	rispondi.setText(R.string.rispondi);
     }
 
@@ -84,7 +84,7 @@ public class CriptoCalcoloActivity extends Activity {
      * @param view
      */
     public void avanti(View view) {
-	if (num_enigma == res.getTextArray(R.array.operazione1).length - 1) {
+	if (num_enigma==res.getTextArray(R.array.operazione1).length-1) {
 	    Toast toast=Toast.makeText(this, R.string.ultimo_err, Toast.LENGTH_SHORT);
 	    toast.show();
 	    return;
@@ -104,7 +104,7 @@ public class CriptoCalcoloActivity extends Activity {
 	int posAprente=Utils.getPosFromId(id_aprente);
 	String inc_aprente=incognite[posAprente];
 	int inc_draw=Utils.getIncDraw(inc_aprente);
-	for (int j=0; j < incognite.length; j++) {
+	for (int j=0; j<incognite.length; j++) {
 	    if (inc_aprente.equals(incognite[j])) {
 		ImageView iv=(ImageView) findViewById(Utils.CIFRE_ID[j]);
 		iv.setImageDrawable(res.getDrawable(inc_draw));
@@ -118,8 +118,8 @@ public class CriptoCalcoloActivity extends Activity {
      */
     private void caricaRisposte() {
 	SharedPreferences settings=getSharedPreferences(Utils.PREFS_NAME, MODE_PRIVATE);
-	for (int i=0; i < risposte.length; i++) {
-	    risposte[i]=settings.getString(Utils.ENIGMA + "_" + num_enigma + "_" + i, incognite[i]);
+	for (int i=0; i<risposte.length; i++) {
+	    risposte[i]=settings.getString(Utils.ENIGMA+"_"+num_enigma+"_"+i, incognite[i]);
 	}
     }
 
@@ -143,8 +143,8 @@ public class CriptoCalcoloActivity extends Activity {
 	    risolti=0;
 	}
 	Button contatore=(Button) findViewById(R.id.contatore);
-	contatore.setText((num_enigma + 1) + "/" + res.getTextArray(R.array.operazione1).length + " (" + risolti + " "
-	    + getString(R.string.ok) + ")");
+	contatore.setText((num_enigma+1)+"/"+res.getTextArray(R.array.operazione1).length+" ("+risolti+" "
+	    +getString(R.string.ok)+")");
     }
 
     /**
@@ -153,7 +153,7 @@ public class CriptoCalcoloActivity extends Activity {
     private void generaSchermata() {
 	SharedPreferences settings=getSharedPreferences(Utils.PREFS_NAME, MODE_PRIVATE);
 	// se è risolto non si può più rispondere
-	risolto=settings.getBoolean(Utils.ENIGMA + "_" + num_enigma + "_risp", false);
+	risolto=settings.getBoolean(Utils.ENIGMA+"_"+num_enigma+"_risp", false);
 	if (risolto) {
 	    disabilitaRispondi();
 	}
@@ -184,7 +184,7 @@ public class CriptoCalcoloActivity extends Activity {
 	processaNumero(res.getTextArray(R.array.numero9)[num_enigma].toString(), 24);
 	generaSimboli();
 	caricaRisposte();
-	for (int i=0; i < incognite.length; i++) {
+	for (int i=0; i<incognite.length; i++) {
 	    processaImmagine(risposte[i], (ImageView) findViewById(Utils.CIFRE_ID[i]));
 	}
     }
@@ -198,9 +198,9 @@ public class CriptoCalcoloActivity extends Activity {
 	simboli=new HashMap<String, String>(10);
 	incognite=new String[27];
 	int sc=0;
-	for (int i=0; i < cifre.length; i++) {
-	    if ( ! "".equals(cifre[i])) {
-		if ( ! simboli.containsKey(cifre[i])) {
+	for (int i=0; i<cifre.length; i++) {
+	    if (!"".equals(cifre[i])) {
+		if (!simboli.containsKey(cifre[i])) {
 		    incognite[i]=Utils.SIMBOLI[sc];
 		    simboli.put(cifre[i], Utils.SIMBOLI[sc++]);
 		}
@@ -216,7 +216,7 @@ public class CriptoCalcoloActivity extends Activity {
     }
 
     public void indietro(View view) {
-	if (num_enigma == 0) {
+	if (num_enigma==0) {
 	    Toast toast=Toast.makeText(this, R.string.primo_err, Toast.LENGTH_SHORT);
 	    toast.show();
 	    return;
@@ -285,20 +285,20 @@ public class CriptoCalcoloActivity extends Activity {
      * @param offset: la posizione all'interno dell'array dove inserire le cifre
      */
     private void processaNumero(String num, int offset) {
-	if (num.length() == 1) {
+	if (num.length()==1) {
 	    cifre[offset]="";
-	    cifre[offset + 1]="";
-	    cifre[offset + 2]=num;
+	    cifre[offset+1]="";
+	    cifre[offset+2]=num;
 	}
-	else if (num.length() == 2) {
+	else if (num.length()==2) {
 	    cifre[offset]="";
-	    cifre[offset + 1]="" + num.charAt(0);
-	    cifre[offset + 2]="" + num.charAt(1);
+	    cifre[offset+1]=""+num.charAt(0);
+	    cifre[offset+2]=""+num.charAt(1);
 	}
 	else {
-	    cifre[offset]="" + num.charAt(0);
-	    cifre[offset + 1]="" + num.charAt(1);
-	    cifre[offset + 2]="" + num.charAt(2);
+	    cifre[offset]=""+num.charAt(0);
+	    cifre[offset+1]=""+num.charAt(1);
+	    cifre[offset+2]=""+num.charAt(2);
 	}
     }
 
@@ -324,8 +324,8 @@ public class CriptoCalcoloActivity extends Activity {
      */
     public void rispondi(View view) {
 	// Primo passo: verifico se ha dato tutte le risposte
-	for (int i=0; i < risposte.length; i++) {
-	    if ( ! "".equals(risposte[i]) && (risposte[i].compareTo("A") >= 0)) {
+	for (int i=0; i<risposte.length; i++) {
+	    if (!"".equals(risposte[i])&&(risposte[i].compareTo("A")>=0)) {
 		// risposta non data: lo scrivo ed esco
 		Toast toast=Toast.makeText(this, R.string.risp_tutti_err, Toast.LENGTH_LONG);
 		toast.show();
@@ -333,8 +333,8 @@ public class CriptoCalcoloActivity extends Activity {
 	    }
 	}
 	// secondo passo: confronto le risposte con la soluzione
-	for (int i=0; i < risposte.length; i++) {
-	    if ( ! risposte[i].equals(cifre[i])) {
+	for (int i=0; i<risposte.length; i++) {
+	    if (!risposte[i].equals(cifre[i])) {
 		// risposta errata: lo scrivo ed esco
 		Toast toast=Toast.makeText(this, R.string.risp_sbagliata, Toast.LENGTH_LONG);
 		toast.show();
@@ -347,7 +347,7 @@ public class CriptoCalcoloActivity extends Activity {
 	// scrivo nelle prefs che l'enigma e risolto e aumento il contatore degli enigmi risolti
 	SharedPreferences settings=getSharedPreferences(Utils.PREFS_NAME, MODE_PRIVATE);
 	SharedPreferences.Editor editor=settings.edit();
-	editor.putBoolean(Utils.ENIGMA + "_" + num_enigma + "_risp", true);
+	editor.putBoolean(Utils.ENIGMA+"_"+num_enigma+"_risp", true);
 	int risolti=0;
 	try {
 	    risolti=Integer.parseInt(settings.getString(Utils.RISOLTI, "0"));
@@ -356,7 +356,7 @@ public class CriptoCalcoloActivity extends Activity {
 	    risolti=0;
 	}
 	risolti++;
-	editor.putString(Utils.RISOLTI, "" + risolti);
+	editor.putString(Utils.RISOLTI, ""+risolti);
 	editor.commit();
 	disabilitaRispondi();
 	disegnaContatore(settings);
@@ -369,10 +369,10 @@ public class CriptoCalcoloActivity extends Activity {
     private void salva() {
 	SharedPreferences settings=getSharedPreferences(Utils.PREFS_NAME, MODE_PRIVATE);
 	SharedPreferences.Editor editor=settings.edit();
-	for (int i=0; i < risposte.length; i++) {
-	    editor.putString(Utils.ENIGMA + "_" + num_enigma + "_" + i, risposte[i]);
+	for (int i=0; i<risposte.length; i++) {
+	    editor.putString(Utils.ENIGMA+"_"+num_enigma+"_"+i, risposte[i]);
 	}
-	editor.putString(Utils.ENIGMA, "" + num_enigma);
+	editor.putString(Utils.ENIGMA, ""+num_enigma);
 	editor.commit();
     }
 
@@ -420,14 +420,14 @@ public class CriptoCalcoloActivity extends Activity {
      * @param iv: la casella in cui far apparire il simbolo
      */
     private void settaSimbolo(String inc, ImageView iv) {
-	if (inc.compareTo("A") >= 0) {
+	if (inc.compareTo("A")>=0) {
 	    iv.setImageDrawable(res.getDrawable(Utils.getIncDraw(inc)));
 	}
 	else {
 	    iv.setImageDrawable(res.getDrawable(Utils.getCifraDraw(inc)));
 	}
-	iv.setClickable( ! risolto);
-	iv.setEnabled( ! risolto);
+	iv.setClickable(!risolto);
+	iv.setEnabled(!risolto);
     }
 
     /**
@@ -452,7 +452,7 @@ public class CriptoCalcoloActivity extends Activity {
 	int posAprente=Utils.getPosFromId(id_aprente);
 	// da cui conosco quale simbolo va sostituito
 	String inc_aprente=incognite[posAprente];
-	for (int j=0; j < incognite.length; j++) {
+	for (int j=0; j<incognite.length; j++) {
 	    if (inc_aprente.equals(incognite[j])) {
 		ImageView iv=(ImageView) findViewById(Utils.CIFRE_ID[j]);
 		iv.setImageDrawable(res.getDrawable(id_nuovacifra));
@@ -468,7 +468,7 @@ public class CriptoCalcoloActivity extends Activity {
      */
     public void ultimo(View view) {
 	salva();
-	num_enigma=res.getTextArray(R.array.operazione1).length - 1;
+	num_enigma=res.getTextArray(R.array.operazione1).length-1;
 	generaSchermata();
     }
 
@@ -484,10 +484,10 @@ public class CriptoCalcoloActivity extends Activity {
      * @param view: l'imgButton premuto
      */
     public void vai(View view) {
-	if (R.id.imageViewC == view.getId()) {
+	if (R.id.imageViewC==view.getId()) {
 	    cancella();
 	}
-	else if (R.id.imageViewB == view.getId()) {
+	else if (R.id.imageViewB==view.getId()) {
 	    d.dismiss();
 	    return;
 	}

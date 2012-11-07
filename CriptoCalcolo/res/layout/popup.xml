@@ -11,24 +11,21 @@
 
         <ImageButton
             android:id="@+id/imageView1"
-            android:layout_width="wrap_content"
-            android:layout_height="fill_parent"
+            style="@style/ImageView"
             android:contentDescription="@string/cifra"
             android:onClick="vai"
             android:src="@drawable/uno" />
 
         <ImageButton
             android:id="@+id/imageView2"
-            android:layout_width="40dp"
-            android:layout_height="fill_parent"
+            style="@style/ImageView"
             android:contentDescription="@string/cifra"
             android:onClick="vai"
             android:src="@drawable/due" />
 
         <ImageButton
             android:id="@+id/imageView3"
-            android:layout_width="40dp"
-            android:layout_height="fill_parent"
+            style="@style/ImageView"
             android:contentDescription="@string/cifra"
             android:onClick="vai"
             android:src="@drawable/tre" />
@@ -41,24 +38,21 @@
 
         <ImageButton
             android:id="@+id/imageView4"
-            android:layout_width="wrap_content"
-            android:layout_height="fill_parent"
+            style="@style/ImageView"
             android:contentDescription="@string/cifra"
             android:onClick="vai"
             android:src="@drawable/quattro" />
 
         <ImageButton
             android:id="@+id/imageView5"
-            android:layout_width="40dp"
-            android:layout_height="fill_parent"
+            style="@style/ImageView"
             android:contentDescription="@string/cifra"
             android:onClick="vai"
             android:src="@drawable/cinque" />
 
         <ImageButton
             android:id="@+id/imageView6"
-            android:layout_width="40dp"
-            android:layout_height="fill_parent"
+            style="@style/ImageView"
             android:contentDescription="@string/cifra"
             android:onClick="vai"
             android:src="@drawable/sei" />
@@ -71,24 +65,21 @@
 
         <ImageButton
             android:id="@+id/imageView7"
-            android:layout_width="40dp"
-            android:layout_height="fill_parent"
+            style="@style/ImageView"
             android:contentDescription="@string/cifra"
             android:onClick="vai"
             android:src="@drawable/sette" />
 
         <ImageButton
             android:id="@+id/imageView8"
-            android:layout_width="wrap_content"
-            android:layout_height="fill_parent"
+            style="@style/ImageView"
             android:contentDescription="@string/cifra"
             android:onClick="vai"
             android:src="@drawable/otto" />
 
         <ImageButton
             android:id="@+id/imageView9"
-            android:layout_width="40dp"
-            android:layout_height="fill_parent"
+            style="@style/ImageView"
             android:contentDescription="@string/cifra"
             android:onClick="vai"
             android:src="@drawable/nove" />
@@ -101,23 +92,22 @@
 
         <ImageButton
             android:id="@+id/imageViewC"
-            android:layout_width="wrap_content"
-            android:layout_height="fill_parent"
+            style="@style/ImageView"
+            android:contentDescription="@string/cancella"
             android:onClick="vai"
             android:src="@drawable/canc" />
 
         <ImageButton
             android:id="@+id/imageView0"
-            android:layout_width="wrap_content"
-            android:layout_height="fill_parent"
+            style="@style/ImageView"
             android:contentDescription="@string/cifra"
             android:onClick="vai"
             android:src="@drawable/zero" />
 
         <ImageButton
             android:id="@+id/imageViewB"
-            android:layout_width="wrap_content"
-            android:layout_height="fill_parent"
+            style="@style/ImageView"
+            android:contentDescription="@string/annulla"
             android:onClick="vai"
             android:src="@drawable/back" />
     </TableRow>

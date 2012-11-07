@@ -13,15 +13,13 @@
 
         <ImageView
             android:id="@+id/numero1_cifra1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/ImageView"
             android:contentDescription="@string/cifra"
             android:onClick="apriPopup" />
 
         <ImageView
             android:id="@+id/numero1_cifra2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/ImageView"
             android:contentDescription="@string/cifra"
             android:onClick="apriPopup" />
 
@@ -34,29 +32,25 @@
 
         <ImageView
             android:id="@+id/operazione1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/ImageView"
             android:contentDescription="@string/operazione"
             android:onClick="apriPopup" />
 
         <ImageView
             android:id="@+id/numero2_cifra1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/ImageView"
             android:contentDescription="@string/cifra"
             android:onClick="apriPopup" />
 
         <ImageView
             android:id="@+id/numero2_cifra2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/ImageView"
             android:contentDescription="@string/cifra"
             android:onClick="apriPopup" />
 
         <ImageView
             android:id="@+id/numero2_cifra3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/ImageView"
             android:contentDescription="@string/cifra"
             android:onClick="apriPopup" />
 
@@ -69,22 +63,19 @@
 
         <ImageView
             android:id="@+id/numero3_cifra1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/ImageView"
             android:contentDescription="@string/cifra"
             android:onClick="apriPopup" />
 
         <ImageView
             android:id="@+id/numero3_cifra2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/ImageView"
             android:contentDescription="@string/cifra"
             android:onClick="apriPopup" />
 
         <ImageView
             android:id="@+id/numero3_cifra3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/ImageView"
             android:contentDescription="@string/cifra"
             android:onClick="apriPopup" />
     </LinearLayout>
@@ -95,69 +86,58 @@
         android:layout_height="wrap_content" >
 
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/ImageView"
             android:contentDescription="@string/uguale"
             android:src="@drawable/vuoto" />
 
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/ImageView"
             android:contentDescription="@string/uguale"
             android:src="@drawable/vuoto" />
 
         <ImageView
             android:id="@+id/operazione2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/ImageView"
             android:contentDescription="@string/operazione" />
 
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/ImageView"
             android:contentDescription="@string/uguale"
             android:src="@drawable/vuoto" />
 
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/ImageView"
             android:contentDescription="@string/uguale"
             android:src="@drawable/vuoto" />
 
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/ImageView"
             android:contentDescription="@string/uguale"
             android:src="@drawable/vuoto" />
 
         <ImageView
             android:id="@+id/operazione3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/ImageView"
             android:contentDescription="@string/operazione" />
 
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/ImageView"
             android:contentDescription="@string/uguale"
             android:src="@drawable/vuoto" />
 
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/ImageView"
             android:contentDescription="@string/uguale"
             android:src="@drawable/vuoto" />
 
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/ImageView"
             android:contentDescription="@string/uguale"
             android:src="@drawable/vuoto" />
 
         <ImageView
             android:id="@+id/operazione4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/ImageView"
             android:contentDescription="@string/operazione" />
     </LinearLayout>
 
@@ -168,76 +148,65 @@
 
         <ImageView
             android:id="@+id/numero4_cifra1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/ImageView"
             android:contentDescription="@string/cifra"
             android:onClick="apriPopup" />
 
         <ImageView
             android:id="@+id/numero4_cifra2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/ImageView"
             android:contentDescription="@string/cifra"
             android:onClick="apriPopup" />
 
         <ImageView
             android:id="@+id/numero4_cifra3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/ImageView"
             android:contentDescription="@string/cifra"
             android:onClick="apriPopup" />
 
         <ImageView
             android:id="@+id/operazione5"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/ImageView"
             android:contentDescription="@string/operazione" />
 
         <ImageView
             android:id="@+id/numero5_cifra1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/ImageView"
             android:contentDescription="@string/cifra"
             android:onClick="apriPopup" />
 
         <ImageView
             android:id="@+id/numero5_cifra2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/ImageView"
             android:contentDescription="@string/cifra"
             android:onClick="apriPopup" />
 
         <ImageView
             android:id="@+id/numero5_cifra3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/ImageView"
             android:contentDescription="@string/cifra"
             android:onClick="apriPopup" />
 
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/ImageView"
             android:contentDescription="@string/uguale"
             android:src="@drawable/uguale" />
 
         <ImageView
             android:id="@+id/numero6_cifra1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/ImageView"
             android:contentDescription="@string/cifra"
             android:onClick="apriPopup" />
 
         <ImageView
             android:id="@+id/numero6_cifra2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/ImageView"
             android:contentDescription="@string/cifra"
             android:onClick="apriPopup" />
 
         <ImageView
             android:id="@+id/numero6_cifra3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/ImageView"
             android:contentDescription="@string/cifra"
             android:onClick="apriPopup" />
     </LinearLayout>
@@ -248,10 +217,10 @@
         android:layout_height="wrap_content" >
 
         <ImageView
-            android:contentDescription="@string/linea"
             android:layout_width="fill_parent"
             android:layout_height="4dp"
             android:background="#000000"
+            android:contentDescription="@string/linea"
             android:paddingBottom="2dp"
             android:paddingLeft="5dp"
             android:paddingRight="5dp"
@@ -328,8 +297,7 @@
 
         <ImageView
             android:id="@+id/numero9_cifra2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/ImageView"
             android:contentDescription="@string/cifra"
             android:onClick="apriPopup" />
 
@@ -349,8 +317,6 @@
         <Button
             android:id="@+id/primo"
             style="@style/Button"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
             android:layout_weight="1"
             android:onClick="primo"
             android:text="@string/primo" />
@@ -358,8 +324,6 @@
         <Button
             android:id="@+id/indietro"
             style="@style/Button"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
             android:layout_weight="1"
             android:onClick="indietro"
             android:text="@string/indietro" />
@@ -367,16 +331,12 @@
         <Button
             android:id="@+id/contatore"
             style="@style/Button"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
             android:layout_weight="2"
             android:onClick="scegliEnigma" />
 
         <Button
             android:id="@+id/avanti"
             style="@style/Button"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
             android:layout_weight="1"
             android:onClick="avanti"
             android:text="@string/avanti" />
@@ -384,8 +344,6 @@
         <Button
             android:id="@+id/ultimo"
             style="@style/Button"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
             android:layout_weight="1"
             android:onClick="ultimo"
             android:text="@string/ultimo" />
@@ -398,8 +356,6 @@
 
         <Button
             style="@style/Button"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
             android:layout_weight="2"
             android:onClick="apriAiuto"
             android:text="@string/help" />
@@ -407,16 +363,12 @@
         <Button
             android:id="@+id/rispondi"
             style="@style/Button"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
             android:layout_weight="2"
             android:onClick="rispondi"
             android:text="@string/rispondi" />
 
         <Button
             style="@style/Button"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
             android:layout_weight="2"
             android:onClick="classifica"
             android:text="@string/classifica" />

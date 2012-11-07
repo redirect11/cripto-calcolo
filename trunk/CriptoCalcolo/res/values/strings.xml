@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
+	<string name="annulla">Annulla</string>
     <string name="app_name">CriptoCalcolo</string>
     <string name="avanti">-&gt;</string>
+    <string name="cancella">Cacnella</string>
     <string name="cifra">Cifra</string>
     <string name="classifica">Classifica</string>
     <string name="help">Aiuto</string>

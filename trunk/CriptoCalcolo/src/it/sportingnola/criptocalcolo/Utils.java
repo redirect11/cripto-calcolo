@@ -20,7 +20,7 @@ public class Utils {
     public static final String PREFS_NAME="CriptoCalcoloAnsw";
     public static final String ENIGMA="ENIGMA";
     public static final String RISOLTI="RISOLTI";
-    public static final String MY_AD_UNIT_ID="a14dc0415940c7e";
+    public static final String MY_AD_UNIT_ID="a150a90adf4e6c5";
 
     /**
      * Trova il numero associato all'id dell'immagine premuta in popup

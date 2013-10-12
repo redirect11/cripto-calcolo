@@ -381,6 +381,7 @@
     </LinearLayout>
 
     <LinearLayout android:padding="0dp"
+        android:orientation="horizontal"
         android:id="@+id/ads"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content" />

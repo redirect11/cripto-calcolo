@@ -13,6 +13,7 @@ import android.content.res.Resources;
 import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
+import android.view.Display;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
@@ -27,6 +28,8 @@ import com.google.ads.AdSize;
 import com.google.ads.AdView;
 
 public class CriptoCalcoloActivity extends Activity {
+    private static final int NUM_RIGHE=6;
+    private static final int NUM_COL=11;
     PopupDialog numDialog;
     Resources res;
     // ad cifra da 0 a 9 (rappresentata come stringa) è associato un simbolo
@@ -40,6 +43,8 @@ public class CriptoCalcoloActivity extends Activity {
     int num_enigma=0;
     int id_aprente= - 1;
     Dialog enigmaDialog;
+    int width=0; // larghezza delle immagini
+    int height=0; // altezza delle immagini
 
     boolean risolto;
 
@@ -95,7 +100,7 @@ public class CriptoCalcoloActivity extends Activity {
      * @param view
      */
     public void avanti(View view) {
-	if (num_enigma == res.getTextArray(R.array.operazione1).length - 1) {
+	if (num_enigma == (res.getTextArray(R.array.operazione1).length - 1)) {
 	    Toast toast=Toast.makeText(this, R.string.ultimo_err, Toast.LENGTH_SHORT);
 	    toast.show();
 	    return;
@@ -190,6 +195,7 @@ public class CriptoCalcoloActivity extends Activity {
 	    processaImmagine(risposte[i], (ImageView) findViewById(Utils.CIFRE_ID[i]));
 	}
 	aggiustaSpinner();
+	settaDimensione();
     }
 
     /**
@@ -236,6 +242,13 @@ public class CriptoCalcoloActivity extends Activity {
     public void onCreate(Bundle savedInstanceState) {
 	super.onCreate(savedInstanceState);
 	setContentView(R.layout.main);
+	// Dimensioni delle icone: le icone devono essere quadrate
+	Display display=getWindowManager().getDefaultDisplay();
+	width=display.getWidth() / NUM_RIGHE;
+	height=display.getWidth() / NUM_COL;
+	if (width > height) {
+	    width=height;
+	}
 	View view=findViewById(android.R.id.content).getRootView();
 	view.setKeepScreenOn(true);
 	setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
@@ -312,6 +325,7 @@ public class CriptoCalcoloActivity extends Activity {
 	else {
 	    settaSimbolo(inc, iv);
 	}
+
     }
 
     /**
@@ -412,6 +426,21 @@ public class CriptoCalcoloActivity extends Activity {
     }
 
     /**
+     * Setta la dimensione di tutte le immagini
+     */
+    private void settaDimensione() {
+	LinearLayout ll=(LinearLayout) findViewById(R.id.righe).getRootView();
+	ImageView iv=null;
+	for (int i=0; i < ll.getChildCount(); i++) {
+	    iv=(ImageView) ll.getChildAt(i);
+	    iv.setClickable( ! risolto);
+	    iv.setEnabled( ! risolto);
+	    iv.getLayoutParams().height=height;
+	    iv.getLayoutParams().width=width;
+	}
+    }
+
+    /**
      * Imposta l'icona relativa alla cifra scelta nell'imageView selezionata
      * 
      * @param iv: l'ImageView in cui associare l'icona
@@ -457,8 +486,6 @@ public class CriptoCalcoloActivity extends Activity {
 	else {
 	    iv.setImageDrawable(res.getDrawable(Utils.getCifraDraw(inc)));
 	}
-	iv.setClickable( ! risolto);
-	iv.setEnabled( ! risolto);
     }
 
     /**

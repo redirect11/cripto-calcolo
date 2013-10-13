@@ -429,7 +429,19 @@ public class CriptoCalcoloActivity extends Activity {
      * Setta la dimensione di tutte le immagini
      */
     private void settaDimensione() {
-	LinearLayout ll=(LinearLayout) findViewById(R.id.righe).getRootView();
+	settaDimensioneImmagine((LinearLayout) findViewById(R.id.riga1));
+	settaDimensioneImmagine((LinearLayout) findViewById(R.id.riga2));
+	settaDimensioneImmagine((LinearLayout) findViewById(R.id.riga3));
+	settaDimensioneImmagine((LinearLayout) findViewById(R.id.riga5));
+
+    }
+
+    /**
+     * Setta la dimensione dell'immagine della riga selezionata
+     * 
+     * @param ll: riga selezionata
+     */
+    private void settaDimensioneImmagine(LinearLayout ll) {
 	ImageView iv=null;
 	for (int i=0; i < ll.getChildCount(); i++) {
 	    iv=(ImageView) ll.getChildAt(i);
@@ -438,6 +450,7 @@ public class CriptoCalcoloActivity extends Activity {
 	    iv.getLayoutParams().height=height;
 	    iv.getLayoutParams().width=width;
 	}
+
     }
 
     /**

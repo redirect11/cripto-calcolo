@@ -1,33 +1,33 @@
 package it.sportingnola.criptocalcolo;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
 import android.content.res.Resources;
-import android.graphics.Color;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Display;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.Toast;
-import com.google.ads.AdRequest;
-import com.google.ads.AdSize;
-import com.google.ads.AdView;
+import com.google.example.games.basegameutils.BaseGameActivity;
 
-public class CriptoCalcoloActivity extends Activity {
+public class CriptoCalcoloActivity extends BaseGameActivity {
     private static final int NUM_RIGHE=6;
     private static final int NUM_COL=11;
     PopupDialog numDialog;
@@ -45,13 +45,14 @@ public class CriptoCalcoloActivity extends Activity {
     Dialog enigmaDialog;
     int width=0; // larghezza delle immagini
     int height=0; // altezza delle immagini
+    Display display;
+    SharedPreferences settings;
 
     boolean risolto;
 
     private void abilitaRispondi() {
 	Button rispondi=(Button) findViewById(R.id.rispondi);
 	rispondi.setEnabled(true);
-	rispondi.setBackgroundColor(Color.RED);
 	rispondi.setText(R.string.rispondi);
     }
 
@@ -140,7 +141,22 @@ public class CriptoCalcoloActivity extends Activity {
     }
 
     public void classifica(View view) {
-	// TODO: scoreloop
+	if ( ! isOnline()) {
+	    Toast toast=Toast.makeText(this, R.string.err_conessione, Toast.LENGTH_SHORT);
+	    toast.show();
+	    return;
+	}
+	beginUserInitiatedSignIn();
+	if (isSignedIn()) {
+	    startActivityForResult(getGamesClient().getLeaderboardIntent(getString(R.string.leaderboard)), 20);
+	    return;
+	}
+	else {
+	    Toast toast=Toast.makeText(this, R.string.err_conessione, Toast.LENGTH_SHORT);
+	    toast.show();
+	    return;
+	}
+
     }
 
     private String createStringFromEnigma(int i, int risolti) {
@@ -151,7 +167,6 @@ public class CriptoCalcoloActivity extends Activity {
     private void disabilitaRispondi() {
 	Button rispondi=(Button) findViewById(R.id.rispondi);
 	rispondi.setEnabled(false);
-	rispondi.setBackgroundColor(Color.GREEN);
 	rispondi.setText(R.string.risolto);
     }
 
@@ -159,9 +174,8 @@ public class CriptoCalcoloActivity extends Activity {
      * Genera la schermata per l'enigma n. num_enigma
      */
     private void generaSchermata() {
-	SharedPreferences settings=getSharedPreferences(Utils.PREFS_NAME, MODE_PRIVATE);
 	// se è risolto non si può più rispondere
-	risolto=settings.getBoolean(Utils.ENIGMA + "_" + num_enigma + "_risp", false);
+	risolto=isEnigmaRisolto(num_enigma);
 	if (risolto) {
 	    disabilitaRispondi();
 	}
@@ -224,44 +238,7 @@ public class CriptoCalcoloActivity extends Activity {
 	System.arraycopy(incognite, 0, risposte, 0, incognite.length);
     }
 
-    public void indietro(View view) {
-	if (num_enigma == 0) {
-	    Toast toast=Toast.makeText(this, R.string.primo_err, Toast.LENGTH_SHORT);
-	    toast.show();
-	    return;
-	}
-	else {
-	    salva();
-	    num_enigma--;
-	    generaSchermata();
-	}
-    }
-
-    /** Called when the activity is first created. */
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-	super.onCreate(savedInstanceState);
-	setContentView(R.layout.main);
-	// Dimensioni delle icone: le icone devono essere quadrate
-	Display display=getWindowManager().getDefaultDisplay();
-	width=display.getWidth() / NUM_RIGHE;
-	height=display.getWidth() / NUM_COL;
-	if (width > height) {
-	    width=height;
-	}
-	View view=findViewById(android.R.id.content).getRootView();
-	view.setKeepScreenOn(true);
-	setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
-	res=getResources();
-	SharedPreferences settings=getSharedPreferences(Utils.PREFS_NAME, MODE_PRIVATE);
-	String num_enigma_str=settings.getString(Utils.ENIGMA, "");
-	try {
-	    num_enigma=Integer.parseInt(num_enigma_str);
-	}
-	catch (NumberFormatException e) {
-	    num_enigma=0;
-	}
-	generaSchermata();
+    private void gestisciSpinner() {
 	int risolti=0;
 	try {
 	    risolti=Integer.parseInt(settings.getString(Utils.RISOLTI, "0"));
@@ -270,12 +247,13 @@ public class CriptoCalcoloActivity extends Activity {
 	    risolti=0;
 	}
 	Spinner spinnerenigmi=(Spinner) findViewById(R.id.contatore);
-	ArrayAdapter<EnigmaString> adapter=new ArrayAdapter<EnigmaString>(this,
-	    android.R.layout.simple_spinner_dropdown_item);
 	int totEnigmi=res.getTextArray(R.array.operazione1).length;
+	ArrayList<EnigmaString> data=new ArrayList<EnigmaString>(totEnigmi);
 	for (int i=0; i < totEnigmi; i++) {
-	    adapter.add(new EnigmaString(i, createStringFromEnigma(i, risolti)));
+	    data.add(new EnigmaString(i, createStringFromEnigma(i, risolti)));
 	}
+	// select_dialog_item //select_dialog_singlechoice
+	EnigmiAdapter adapter=new EnigmiAdapter(this, android.R.layout.simple_dropdown_item_1line, data);
 	spinnerenigmi.setAdapter(adapter);
 	spinnerenigmi.setSelection(num_enigma);
 	spinnerenigmi.setSelected(true);
@@ -295,15 +273,91 @@ public class CriptoCalcoloActivity extends Activity {
 		// TODO Auto-generated method stub
 	    }
 	});
+
+    }
+
+    public Display getDisplay() {
+	return display;
+    }
+
+    public void indietro(View view) {
+	if (num_enigma == 0) {
+	    Toast toast=Toast.makeText(this, R.string.primo_err, Toast.LENGTH_SHORT);
+	    toast.show();
+	    return;
+	}
+	else {
+	    salva();
+	    num_enigma--;
+	    generaSchermata();
+	}
+    }
+
+    // dato l'enigma verifica se è risolto
+    public boolean isEnigmaRisolto(int position) {
+	settings=getSharedPreferences(Utils.PREFS_NAME, MODE_PRIVATE);
+	return settings.getBoolean(Utils.ENIGMA + "_" + position + "_risp", false);
+    }
+
+    private boolean isOnline() {
+	ConnectivityManager cm=(ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+	NetworkInfo netInfo=cm.getActiveNetworkInfo();
+	if ((netInfo != null) && netInfo.isConnectedOrConnecting()) {
+	    return true;
+	}
+	return false;
+    }
+
+    /** Called when the activity is first created. */
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+	super.onCreate(savedInstanceState);
+	setContentView(R.layout.main);
+	// Dimensioni delle icone: le icone devono essere quadrate e pari al più piccolo lato
+	// possibile
+	display=getWindowManager().getDefaultDisplay();
+	width=display.getWidth() / NUM_COL;
+	height=display.getHeight() / NUM_RIGHE;
+	if (width > height) {
+	    width=height;
+	}
+	else {
+	    height=width;
+	}
+	View view=findViewById(android.R.id.content).getRootView();
+	view.setKeepScreenOn(true);
+	setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
+	res=getResources();
+	settings=getSharedPreferences(Utils.PREFS_NAME, MODE_PRIVATE);
+	String num_enigma_str=settings.getString(Utils.ENIGMA, "");
+	try {
+	    num_enigma=Integer.parseInt(num_enigma_str);
+	}
+	catch (NumberFormatException e) {
+	    num_enigma=0;
+	}
+	generaSchermata();
+	gestisciSpinner();
 	// Create the adView
-	AdView adView=new AdView(this, AdSize.SMART_BANNER, Utils.MY_AD_UNIT_ID);
-	// Lookup your LinearLayout assuming it’s been given
-	// the attribute android:id="@+id/mainLayout"
-	LinearLayout layout=(LinearLayout) findViewById(R.id.ads);
-	// Add the adView to it
-	layout.addView(adView);
-	// Initiate a generic request to load it with an ad
-	adView.loadAd(new AdRequest());
+
+    }
+
+    @Override
+    public void onSignInFailed() {
+	Log.w("CriptoCalcolo", "NON SONO RIUSCITO A CONNETTERMI");
+    }
+
+    @Override
+    public void onSignInSucceeded() {
+	Log.w("CriptoCalcolo", "CONNESSO");
+    }
+
+    @Override
+    public void onStart() {
+	super.onStart();
+	if (isOnline()) {
+	    beginUserInitiatedSignIn();
+	}
     }
 
     @Override
@@ -325,7 +379,6 @@ public class CriptoCalcoloActivity extends Activity {
 	else {
 	    settaSimbolo(inc, iv);
 	}
-
     }
 
     /**
@@ -409,7 +462,13 @@ public class CriptoCalcoloActivity extends Activity {
 	editor.putString(Utils.RISOLTI, "" + risolti);
 	editor.commit();
 	disabilitaRispondi();
-	// TODO: scoreloop
+	// invia i risultati al server
+	if ( ! isSignedIn() && isOnline()) {
+	    beginUserInitiatedSignIn();
+	}
+	if (isSignedIn()) {
+	    getGamesClient().submitScore(getString(R.string.leaderboard), risolti);
+	}
     }
 
     /**
@@ -433,7 +492,6 @@ public class CriptoCalcoloActivity extends Activity {
 	settaDimensioneImmagine((LinearLayout) findViewById(R.id.riga2));
 	settaDimensioneImmagine((LinearLayout) findViewById(R.id.riga3));
 	settaDimensioneImmagine((LinearLayout) findViewById(R.id.riga5));
-
     }
 
     /**

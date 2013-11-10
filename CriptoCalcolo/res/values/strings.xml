@@ -1,210 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <string name="aiuto_title">Aiuto</string>
-	<string name="annulla">Annulla</string>
-    <string name="app_name">CriptoCalcolo</string>
-    <string name="avanti">-&gt;</string>
-    <string name="cancella">Cacnella</string>
-    <string name="cifra">Cifra</string>
-    <string name="classifica">Classifica</string>
-    <string name="help">Aiuto</string>
-    <string name="indietro">&lt;-</string>
-    <string name="istruction">CriptoCalcolo è un gioco liberamente ispirato a "Calcolo Enigmatico" della Settimana Enigmistica e segue le stesse regole.\n\nDevi associare ad ogni incognita la cifra giusta da 0 a 9, aiutandoti con le operazioni inserite. A schema risolto premi Rispondi per verificare.\n\nTap sull\'incognita per scegliere la cifra da associare o per cancellare la scelta fatta.</string>
-    <string name="linea">Linea</string>
-    <string name="ok">OK</string>
-    <string name="operazione">operazione</string>
-    <string name="popup_title">Scegli un numero</string>
-    <string name="primo">&lt;-|</string>
-    <string name="primo_err">Questo è il primo enigma</string>
-    <string name="risolto">Risolto!</string>
-    <string name="risp_tutti_err">Sostituisci prima tutti i simboli con le cifre</string>
-    <string name="risp_sbagliata">Risposta errata: ritenta!</string>
-    <string name="risp_esatta">Risposta esatta: complimenti!</string>
-    <string name="rispondi">Rispondi</string>
-    <string name="scegli_enigma">Seleziona Enigma</string>
-    <string name="site">Sito</string>
-    <string name="uguale">uguale</string>
-    <string name="ultimo">|-&gt;</string>
-    <string name="ultimo_err">Questo è l\'ultimo enigma</string>
+<resources  xmlns:tools="http://schemas.android.com/tools" tools:locale="it">
+    <string translatable="false" name="aiuto_title">Aiuto</string>
+	<string translatable="false" name="annulla">Annulla</string>
+    <string translatable="false" name="app_name">CriptoCalcolo</string>
+    <string translatable="false" name="avanti">-&gt;</string>
+    <string translatable="false" name="cancella">Cacnella</string>
+    <string translatable="false" name="cifra">Cifra</string>
+    <string translatable="false" name="classifica">Classifica</string>
+    <string translatable="false" name="err_conessione">Impossibile aprire la classifica: controllare la connessione</string>
+    <string translatable="false" name="help">Aiuto</string>
+    <string translatable="false" name="indietro">&lt;-</string>
+    <string translatable="false" name="istruction">CriptoCalcolo è un gioco liberamente ispirato a "Calcolo Enigmatico" della Settimana Enigmistica e segue le stesse regole.\n\nDevi associare ad ogni incognita la cifra giusta da 0 a 9, aiutandoti con le operazioni inserite. A schema risolto premi Rispondi per verificare.\n\nTap sull\'incognita per scegliere la cifra da associare o per cancellare la scelta fatta.</string>
+    <string translatable="false" name="linea">Linea</string>
+    <string translatable="false" name="ok">OK</string>
+    <string translatable="false" name="operazione">operazione</string>
+    <string translatable="false" name="popup_title">Scegli un numero</string>
+    <string translatable="false" name="primo">&lt;-|</string>
+    <string translatable="false" name="primo_err">Questo è il primo enigma</string>
+    <string translatable="false" name="nonrisolto">Non risolto</string>
+    <string translatable="false" name="risolto">Risolto!</string>
+    <string translatable="false" name="risp_tutti_err">Sostituisci prima tutti i simboli con le cifre</string>
+    <string translatable="false" name="risp_sbagliata">Risposta errata: ritenta!</string>
+    <string translatable="false" name="risp_esatta">Risposta esatta: complimenti!</string>
+    <string translatable="false" name="rispondi">Rispondi</string>
+    <string translatable="false" name="scegli_enigma">Seleziona Enigma</string>
+    <string translatable="false" name="site">Sito</string>
+    <string translatable="false" name="uguale">uguale</string>
+    <string translatable="false" name="ultimo">|-&gt;</string>
+    <string translatable="false" name="ultimo_err">Questo è l\'ultimo enigma</string>
 
-    <string-array name="numero1">
-        <item>54</item>
-        <item>200</item>
-        <item>417</item>
-        <item>96</item>
-        <item>220</item>
-        <item>181</item>
-        <item>200</item>
-        <item>857</item>
-        <item>283</item>
-        <item>13</item>
-    </string-array>
-    <string-array name="numero2">
-        <item>180</item>
-        <item>10</item>
-        <item>319</item>
-        <item>76</item>
-        <item>354</item>
-        <item>108</item>
-        <item>40</item>
-        <item>491</item>
-        <item>86</item>
-        <item>10</item>
-    </string-array>
-    <string-array name="numero3">
-        <item>234</item>
-        <item>20</item>
-        <item>763</item>
-        <item>172</item>
-        <item>574</item>
-        <item>73</item>
-        <item>5</item>
-        <item>366</item>
-        <item>197</item>
-        <item>130</item>
-    </string-array>
-    <string-array name="numero4">
-        <item>810</item>
-        <item>3</item>
-        <item>92</item>
-        <item>322</item>
-        <item>22</item>
-        <item>178</item>
-        <item>2</item>
-        <item>3</item>
-        <item>131</item>
-        <item>36</item>
-    </string-array>
-    <string-array name="numero5">
-        <item>45</item>
-        <item>12</item>
-        <item>4</item>
-        <item>2</item>
-        <item>6</item>
-        <item>2</item>
-        <item>10</item>
-        <item>61</item>
-        <item>4</item>
-        <item>34</item>
-    </string-array>
-    <string-array name="numero6">
-        <item>18</item>
-        <item>36</item>
-        <item>368</item>
-        <item>161</item>
-        <item>16</item>
-        <item>89</item>
-        <item>20</item>
-        <item>183</item>
-        <item>127</item>
-        <item>2</item>
-    </string-array>
-    <string-array name="numero7">
-        <item>864</item>
-        <item>600</item>
-        <item>325</item>
-        <item>418</item>
-        <item>10</item>
-        <item>3</item>
-        <item>100</item>
-        <item>860</item>
-        <item>414</item>
-        <item>468</item>
-    </string-array>
-    <string-array name="numero8">
-        <item>4</item>
-        <item>120</item>
-        <item>323</item>
-        <item>38</item>
-        <item>59</item>
-        <item>54</item>
-        <item>4</item>
-        <item>430</item>
-        <item>344</item>
-        <item>340</item>
-    </string-array>
-    <string-array name="numero9">
-        <item>216</item>
-        <item>720</item>
-        <item>2</item>
-        <item>11</item>
-        <item>590</item>
-        <item>162</item>
-        <item>25</item>
-        <item>2</item>
-        <item>70</item>
-        <item>128</item>
-    </string-array>
-    <string-array name="operazione1">
-        <item>+</item>
-        <item>/</item>
-        <item>+</item>
-        <item>+</item>
-        <item>+</item>
-        <item>-</item>
-        <item>/</item>
-        <item>-</item>
-        <item>-</item>
-        <item>*</item>
-    </string-array>
-    <string-array name="operazione2">
-        <item>+</item>
-        <item>*</item>
-        <item>-</item>
-        <item>+</item>
-        <item>/</item>
-        <item>-</item>
-        <item>/</item>
-        <item>+</item>
-        <item>+</item>
-        <item>*</item>
-    </string-array>
-    <string-array name="operazione3">
-        <item>/</item>
-        <item>*</item>
-        <item>+</item>
-        <item>/</item>
-        <item>/</item>
-        <item>/</item>
-        <item>/</item>
-        <item>-</item>
-        <item>*</item>
-        <item>*</item>
-    </string-array>
-    <string-array name="operazione4">
-        <item>-</item>
-        <item>*</item>
-        <item>/</item>
-        <item>-</item>
-        <item>+</item>
-        <item>+</item>
-        <item>+</item>
-        <item>/</item>
-        <item>-</item>
-        <item>-</item>
-    </string-array>
-    <string-array name="operazione5">
-        <item>/</item>
-        <item>*</item>
-        <item>*</item>
-        <item>/</item>
-        <item>-</item>
-        <item>/</item>
-        <item>*</item>
-        <item>*</item>
-        <item>-</item>
-        <item>-</item>
-    </string-array>
-    <string-array name="operazione6">
-        <item>/</item>
-        <item>+</item>
-        <item>-</item>
-        <item>/</item>
-        <item>*</item>
-        <item>*</item>
-        <item>/</item>
-        <item>/</item>
-        <item>-</item>
-        <item>-</item>
-    </string-array>
+    
 </resources>

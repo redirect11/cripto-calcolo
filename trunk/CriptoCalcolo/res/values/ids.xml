@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+    <string name="app_id">996779988864</string>
+
+    <string name="achievement_base">CgkIgK_epYEdEAIQAw</string>
+    <string name="achievement_beginner">CgkIgK_epYEdEAIQBA</string>
+    <string name="achievement_medio">CgkIgK_epYEdEAIQBQ</string>
+    <string name="achievement_expert">CgkIgK_epYEdEAIQBg</string>
+    <string name="achievement_maestro">CgkIgK_epYEdEAIQBw</string>
+
+    <string name="leaderboard">CgkIgK_epYEdEAIQAQ</string>
+    
+    <!-- Gli enigmi -->
+    <string-array name="numero1">
+        <item>54</item>
+        <item>200</item>
+        <item>417</item>
+        <item>96</item>
+        <item>220</item>
+        <item>181</item>
+        <item>200</item>
+        <item>857</item>
+        <item>283</item>
+        <item>13</item>
+        <item>127</item>
+        <item>212</item>
+    </string-array>
+    <string-array name="numero2">
+        <item>180</item>
+        <item>10</item>
+        <item>319</item>
+        <item>76</item>
+        <item>354</item>
+        <item>108</item>
+        <item>40</item>
+        <item>491</item>
+        <item>86</item>
+        <item>10</item>
+        <item>30</item>
+        <item>158</item>
+    </string-array>
+    <string-array name="numero3">
+        <item>234</item>
+        <item>20</item>
+        <item>763</item>
+        <item>172</item>
+        <item>574</item>
+        <item>73</item>
+        <item>5</item>
+        <item>366</item>
+        <item>197</item>
+        <item>130</item>
+        <item>157</item>
+        <item>54</item>
+    </string-array>
+    <string-array name="numero4">
+        <item>810</item>
+        <item>3</item>
+        <item>92</item>
+        <item>322</item>
+        <item>22</item>
+        <item>178</item>
+        <item>2</item>
+        <item>3</item>
+        <item>131</item>
+        <item>36</item>
+        <item>165</item>
+        <item>106</item>
+    </string-array>
+    <string-array name="numero5">
+        <item>45</item>
+        <item>12</item>
+        <item>4</item>
+        <item>2</item>
+        <item>6</item>
+        <item>2</item>
+        <item>10</item>
+        <item>61</item>
+        <item>4</item>
+        <item>34</item>
+        <item>15</item>
+        <item>432</item>
+    </string-array>
+    <string-array name="numero6">
+        <item>18</item>
+        <item>36</item>
+        <item>368</item>
+        <item>161</item>
+        <item>16</item>
+        <item>89</item>
+        <item>20</item>
+        <item>183</item>
+        <item>127</item>
+        <item>2</item>
+        <item>11</item>
+        <item>538</item>
+    </string-array>
+    <string-array name="numero7">
+        <item>864</item>
+        <item>600</item>
+        <item>325</item>
+        <item>418</item>
+        <item>10</item>
+        <item>3</item>
+        <item>100</item>
+        <item>860</item>
+        <item>414</item>
+        <item>468</item>
+        <item>292</item>
+        <item>2</item>
+    </string-array>
+    <string-array name="numero8">
+        <item>4</item>
+        <item>120</item>
+        <item>323</item>
+        <item>38</item>
+        <item>59</item>
+        <item>54</item>
+        <item>4</item>
+        <item>430</item>
+        <item>344</item>
+        <item>340</item>
+        <item>2</item>
+        <item>590</item>
+    </string-array>
+    <string-array name="numero9">
+        <item>216</item>
+        <item>720</item>
+        <item>2</item>
+        <item>11</item>
+        <item>590</item>
+        <item>162</item>
+        <item>25</item>
+        <item>2</item>
+        <item>70</item>
+        <item>128</item>
+        <item>146</item>
+        <item>592</item>
+    </string-array>
+    <string-array name="operazione1">
+        <item>+</item>
+        <item>/</item>
+        <item>+</item>
+        <item>+</item>
+        <item>+</item>
+        <item>-</item>
+        <item>/</item>
+        <item>-</item>
+        <item>-</item>
+        <item>*</item>
+        <item>+</item>
+        <item>-</item>
+    </string-array>
+    <string-array name="operazione2">
+        <item>+</item>
+        <item>*</item>
+        <item>-</item>
+        <item>+</item>
+        <item>/</item>
+        <item>-</item>
+        <item>/</item>
+        <item>+</item>
+        <item>+</item>
+        <item>*</item>
+        <item>+</item>
+        <item>/</item>
+    </string-array>
+    <string-array name="operazione3">
+        <item>/</item>
+        <item>*</item>
+        <item>+</item>
+        <item>/</item>
+        <item>/</item>
+        <item>/</item>
+        <item>/</item>
+        <item>-</item>
+        <item>*</item>
+        <item>*</item>
+        <item>/</item>
+        <item>+</item>
+    </string-array>
+    <string-array name="operazione4">
+        <item>-</item>
+        <item>*</item>
+        <item>/</item>
+        <item>-</item>
+        <item>+</item>
+        <item>+</item>
+        <item>+</item>
+        <item>/</item>
+        <item>-</item>
+        <item>-</item>
+        <item>-</item>
+        <item>+</item>
+    </string-array>
+    <string-array name="operazione5">
+        <item>/</item>
+        <item>*</item>
+        <item>*</item>
+        <item>/</item>
+        <item>-</item>
+        <item>/</item>
+        <item>*</item>
+        <item>*</item>
+        <item>-</item>
+        <item>-</item>
+        <item>/</item>
+        <item>+</item>
+    </string-array>
+    <string-array name="operazione6">
+        <item>/</item>
+        <item>+</item>
+        <item>-</item>
+        <item>/</item>
+        <item>*</item>
+        <item>*</item>
+        <item>/</item>
+        <item>/</item>
+        <item>-</item>
+        <item>-</item>
+        <item>/</item>
+        <item>+</item>
+    </string-array>
+</resources>

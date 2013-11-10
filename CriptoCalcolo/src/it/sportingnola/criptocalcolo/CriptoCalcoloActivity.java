@@ -28,7 +28,7 @@ import android.widget.Toast;
 import com.google.example.games.basegameutils.BaseGameActivity;
 
 public class CriptoCalcoloActivity extends BaseGameActivity {
-    private static final int NUM_RIGHE=6;
+    private static final int NUM_RIGHE=7;
     private static final int NUM_COL=11;
     PopupDialog numDialog;
     Resources res;
@@ -47,8 +47,7 @@ public class CriptoCalcoloActivity extends BaseGameActivity {
     int height=0; // altezza delle immagini
     Display display;
     SharedPreferences settings;
-
-    boolean risolto;
+    boolean risolto=false;
 
     private void abilitaRispondi() {
 	Button rispondi=(Button) findViewById(R.id.rispondi);
@@ -338,8 +337,7 @@ public class CriptoCalcoloActivity extends BaseGameActivity {
 	}
 	generaSchermata();
 	gestisciSpinner();
-	// Create the adView
-
+	// TODO: Crea il banner
     }
 
     @Override
@@ -366,6 +364,11 @@ public class CriptoCalcoloActivity extends BaseGameActivity {
 	salva();
     }
 
+    /**
+     * Vai al primo enigma
+     * 
+     * @param view
+     */
     public void primo(View view) {
 	salva();
 	num_enigma=0;
@@ -445,6 +448,7 @@ public class CriptoCalcoloActivity extends BaseGameActivity {
 	    }
 	}
 	// ok, risposta esatta: lo scrivo
+	risolto=true;
 	Toast toast=Toast.makeText(this, R.string.risp_esatta, Toast.LENGTH_LONG);
 	toast.show();
 	// scrivo nelle prefs che l'enigma e risolto e aumento il contatore degli enigmi risolti
@@ -461,7 +465,9 @@ public class CriptoCalcoloActivity extends BaseGameActivity {
 	risolti++;
 	editor.putString(Utils.RISOLTI, "" + risolti);
 	editor.commit();
+	gestisciSpinner();
 	disabilitaRispondi();
+	settaDimensione();
 	// invia i risultati al server
 	if ( ! isSignedIn() && isOnline()) {
 	    beginUserInitiatedSignIn();
@@ -485,17 +491,20 @@ public class CriptoCalcoloActivity extends BaseGameActivity {
     }
 
     /**
-     * Setta la dimensione di tutte le immagini
+     * Setta la dimensione di tutte le immagini e delle righe
      */
     private void settaDimensione() {
 	settaDimensioneImmagine((LinearLayout) findViewById(R.id.riga1));
 	settaDimensioneImmagine((LinearLayout) findViewById(R.id.riga2));
 	settaDimensioneImmagine((LinearLayout) findViewById(R.id.riga3));
 	settaDimensioneImmagine((LinearLayout) findViewById(R.id.riga5));
+	settaDimensioneRiga((LinearLayout) findViewById(R.id.riga6));
+	settaDimensioneRiga((LinearLayout) findViewById(R.id.riga7));
     }
 
     /**
-     * Setta la dimensione dell'immagine della riga selezionata
+     * Setta la dimensione dell'immagine della riga selezionata Inoltre abilita / disabilita la
+     * possibilità di cambiare risposta
      * 
      * @param ll: riga selezionata
      */
@@ -509,6 +518,15 @@ public class CriptoCalcoloActivity extends BaseGameActivity {
 	    iv.getLayoutParams().width=width;
 	}
 
+    }
+
+    private void settaDimensioneRiga(LinearLayout riga) {
+	riga.getLayoutParams().height=height;
+	View b=null;
+	for (int i=0; i < riga.getChildCount(); i++) {
+	    b=riga.getChildAt(i);
+	    b.getLayoutParams().height=height;
+	}
     }
 
     /**

@@ -1,5 +1,10 @@
 package it.sportingnola.criptocalcolo;
 
+/**
+ * Classe di utilità per avere le costanti separate
+ * 
+ * @author paolo
+ */
 public class Utils {
     static public final String PIU="+";
     static public final String MENO="-";

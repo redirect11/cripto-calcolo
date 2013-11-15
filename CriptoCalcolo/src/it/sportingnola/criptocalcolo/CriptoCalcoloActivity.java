@@ -25,11 +25,15 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.Toast;
+import com.google.android.gms.ads.AdView;
 import com.google.example.games.basegameutils.BaseGameActivity;
 
 public class CriptoCalcoloActivity extends BaseGameActivity {
     private static final int NUM_RIGHE=7;
     private static final int NUM_COL=11;
+    private AdView adView;
+    private static final String MY_AD_UNIT_ID="85c7c1ced93649ec";
+
     PopupDialog numDialog;
     Resources res;
     // ad cifra da 0 a 9 (rappresentata come stringa) è associato un simbolo
@@ -337,7 +341,32 @@ public class CriptoCalcoloActivity extends BaseGameActivity {
 	}
 	generaSchermata();
 	gestisciSpinner();
-	// TODO: Crea il banner
+
+	// Banner
+	adView=new AdView(this);
+	adView.setAdUnitId(MY_AD_UNIT_ID);
+	adView.setAdSize(com.google.android.gms.ads.AdSize.SMART_BANNER);
+	LinearLayout layout=(LinearLayout) findViewById(R.id.ads);
+	// Add the adView to it
+	layout.addView(adView);
+    }
+
+    @Override
+    public void onDestroy() {
+	adView.destroy();
+	super.onDestroy();
+    }
+
+    @Override
+    public void onPause() {
+	adView.pause();
+	super.onPause();
+    }
+
+    @Override
+    public void onResume() {
+	super.onResume();
+	adView.resume();
     }
 
     @Override

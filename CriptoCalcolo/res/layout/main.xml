@@ -354,7 +354,7 @@
             android:onClick="ultimo"
             android:text="@string/ultimo" />
     </LinearLayout>
-
+    
     <LinearLayout
         android:id="@+id/riga7"
         android:layout_width="fill_parent"
@@ -379,14 +379,12 @@
             android:onClick="classifica"
             android:text="@string/classifica" />
     </LinearLayout>
-
+    
     <LinearLayout
         android:id="@+id/ads"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:padding="0dp"  />
-
-    
+        android:padding="0dp" />
 
 </LinearLayout>

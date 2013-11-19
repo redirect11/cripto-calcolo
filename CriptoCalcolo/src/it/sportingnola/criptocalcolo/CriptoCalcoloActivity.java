@@ -25,6 +25,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.Toast;
+import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.google.example.games.basegameutils.BaseGameActivity;
 
@@ -32,7 +33,7 @@ public class CriptoCalcoloActivity extends BaseGameActivity {
     private static final int NUM_RIGHE=7;
     private static final int NUM_COL=11;
     private AdView adView;
-    private static final String MY_AD_UNIT_ID="85c7c1ced93649ec";
+    private static final String MY_AD_UNIT_ID="ca-app-pub-4371667174118366/3261133736";// "85c7c1ced93649ec";
 
     PopupDialog numDialog;
     Resources res;
@@ -349,6 +350,10 @@ public class CriptoCalcoloActivity extends BaseGameActivity {
 	LinearLayout layout=(LinearLayout) findViewById(R.id.ads);
 	// Add the adView to it
 	layout.addView(adView);
+	// Initiate a generic request.
+	AdRequest adRequest=new AdRequest.Builder().build();
+	// Load the adView with the ad request.
+	adView.loadAd(adRequest);
     }
 
     @Override

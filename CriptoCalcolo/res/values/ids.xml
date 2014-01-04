@@ -28,6 +28,8 @@
         <item>893</item>
         <item>776</item>
         <item>616</item>
+        <item>271</item>
+        <item>917</item>
     </string-array>
     <string-array name="numero2">
         <item>180</item>
@@ -45,6 +47,8 @@
         <item>74</item>
         <item>154</item>
         <item>122</item>
+        <item>235</item>
+        <item>194</item>
     </string-array>
     <string-array name="numero3">
         <item>234</item>
@@ -62,6 +66,8 @@
         <item>967</item>
         <item>930</item>
         <item>494</item>
+        <item>506</item>
+        <item>723</item>
     </string-array>
     <string-array name="numero4">
         <item>810</item>
@@ -79,6 +85,8 @@
         <item>3</item>
         <item>52</item>
         <item>366</item>
+        <item>2</item>
+        <item>64</item>
     </string-array>
     <string-array name="numero5">
         <item>45</item>
@@ -96,6 +104,8 @@
         <item>12</item>
         <item>96</item>
         <item>61</item>
+        <item>23</item>
+        <item>3</item>
     </string-array>
     <string-array name="numero6">
         <item>18</item>
@@ -113,6 +123,8 @@
         <item>15</item>
         <item>148</item>
         <item>6</item>
+        <item>46</item>
+        <item>61</item>
     </string-array>
     <string-array name="numero7">
         <item>864</item>
@@ -130,6 +142,8 @@
         <item>896</item>
         <item>724</item>
         <item>250</item>
+        <item>269</item>
+        <item>981</item>
     </string-array>
     <string-array name="numero8">
         <item>4</item>
@@ -147,6 +161,8 @@
         <item>86</item>
         <item>58</item>
         <item>2</item>
+        <item>258</item>
+        <item>197</item>
     </string-array>
     <string-array name="numero9">
         <item>216</item>
@@ -164,6 +180,8 @@
         <item>982</item>
         <item>782</item>
         <item>500</item>
+        <item>11</item>
+        <item>784</item>
     </string-array>
     <string-array name="operazione1">
         <item>+</item>
@@ -179,6 +197,8 @@
         <item>+</item>
         <item>-</item>
         <item>+</item>
+        <item>+</item>
+        <item>-</item>
         <item>+</item>
         <item>-</item>
     </string-array>
@@ -198,6 +218,8 @@
         <item>+</item>
         <item>-</item>
         <item>-</item>
+        <item>-</item>
+        <item>+</item>
     </string-array>
     <string-array name="operazione3">
         <item>/</item>
@@ -215,6 +237,8 @@
         <item>+</item>
         <item>-</item>
         <item>/</item>
+        <item>+</item>
+        <item>+</item>
     </string-array>
     <string-array name="operazione4">
         <item>-</item>
@@ -231,6 +255,8 @@
         <item>+</item>
         <item>+</item>
         <item>-</item>
+        <item>+</item>
+        <item>/</item>
         <item>+</item>
     </string-array>
     <string-array name="operazione5">
@@ -249,6 +275,8 @@
         <item>+</item>
         <item>+</item>
         <item>/</item>
+        <item>*</item>
+        <item>-</item>
     </string-array>
     <string-array name="operazione6">
         <item>/</item>
@@ -266,5 +294,7 @@
         <item>+</item>
         <item>+</item>
         <item>*</item>
+        <item>-</item>
+        <item>-</item>
     </string-array>
 </resources>

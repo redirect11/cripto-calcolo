@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources  xmlns:tools="http://schemas.android.com/tools" tools:locale="it">
+    <string name="aiuto_title">Aiuto</string>
+	<string name="annulla">Annulla</string>
+    <string name="app_name">Fruit Puzzle</string>
+    <string name="avanti">-&gt;</string>
+    <string name="cancella">Cancella</string>
+    <string name="cifra">Cifra</string>
+    <string name="classifica">Classifica</string>
+    <string name="err_conessione">Impossibile aprire la classifica: controllare la connessione</string>
+    <string name="help">Aiuto</string>
+    <string name="istruction">Fruit Puzzle è un gioco liberamente ispirato a "Calcolo Enigmatico" della Settimana Enigmistica e segue le stesse regole.\n\nDevi associare ad ogni incognita la cifra giusta da 0 a 9, aiutandoti con le operazioni inserite. A schema risolto premi Rispondi per verificare.\n\nTap sull\'incognita per scegliere la cifra da associare o per cancellare la scelta fatta.</string>
+    <string name="popup_title">Scegli un numero</string>
+    <string name="primo_err">Questo è il primo enigma</string>
+    <string name="nonrisolto">Non risolto</string>
+    <string name="risolto">Risolto!</string>
+    <string name="risp_tutti_err">Sostituisci prima tutti i simboli con le cifre</string>
+    <string name="risp_sbagliata">Risposta errata: ritenta!</string>
+    <string name="risp_esatta">Risposta esatta: complimenti!</string>
+    <string name="rispondi">Rispondi</string>
+    <string name="todo">da fare</string>
+    <string name="scegli_enigma">Seleziona Enigma</string>
+    <string name="site">Sito</string>
+    <string name="ultimo_err">Questo è l\'ultimo enigma</string>
+    
+</resources>

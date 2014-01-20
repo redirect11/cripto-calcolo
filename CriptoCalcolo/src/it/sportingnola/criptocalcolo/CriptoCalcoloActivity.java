@@ -3,6 +3,7 @@ package it.sportingnola.criptocalcolo;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
@@ -15,7 +16,6 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.Uri;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Display;
 import android.view.View;
 import android.widget.AdapterView;
@@ -27,9 +27,8 @@ import android.widget.Spinner;
 import android.widget.Toast;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
-import com.google.example.games.basegameutils.BaseGameActivity;
 
-public class CriptoCalcoloActivity extends BaseGameActivity {
+public class CriptoCalcoloActivity extends Activity {
     private static final int NUM_RIGHE=7;
     private static final int NUM_COL=11;
     private AdView adView;
@@ -145,22 +144,9 @@ public class CriptoCalcoloActivity extends BaseGameActivity {
     }
 
     public void classifica(View view) {
-	if ( ! isOnline()) {
-	    Toast toast=Toast.makeText(this, R.string.err_conessione, Toast.LENGTH_SHORT);
-	    toast.show();
-	    return;
-	}
-	beginUserInitiatedSignIn();
-	if (isSignedIn()) {
-	    startActivityForResult(getGamesClient().getLeaderboardIntent(getString(R.string.leaderboard)), 20);
-	    return;
-	}
-	else {
-	    Toast toast=Toast.makeText(this, R.string.err_conessione, Toast.LENGTH_SHORT);
-	    toast.show();
-	    return;
-	}
-
+	Toast toast=Toast.makeText(this, R.string.todo, Toast.LENGTH_SHORT);
+	toast.show();
+	return;
     }
 
     private String createStringFromEnigma(int i, int risolti) {
@@ -375,24 +361,6 @@ public class CriptoCalcoloActivity extends BaseGameActivity {
     }
 
     @Override
-    public void onSignInFailed() {
-	Log.w("CriptoCalcolo", "NON SONO RIUSCITO A CONNETTERMI");
-    }
-
-    @Override
-    public void onSignInSucceeded() {
-	Log.w("CriptoCalcolo", "CONNESSO");
-    }
-
-    @Override
-    public void onStart() {
-	super.onStart();
-	if (isOnline()) {
-	    beginUserInitiatedSignIn();
-	}
-    }
-
-    @Override
     protected void onStop() {
 	super.onStop();
 	salva();
@@ -503,12 +471,7 @@ public class CriptoCalcoloActivity extends BaseGameActivity {
 	disabilitaRispondi();
 	settaDimensione();
 	// invia i risultati al server
-	if ( ! isSignedIn() && isOnline()) {
-	    beginUserInitiatedSignIn();
-	}
-	if (isSignedIn()) {
-	    getGamesClient().submitScore(getString(R.string.leaderboard), risolti);
-	}
+	// TODO
     }
 
     /**

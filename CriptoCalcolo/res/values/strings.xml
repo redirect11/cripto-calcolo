@@ -1,33 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources  xmlns:tools="http://schemas.android.com/tools" tools:locale="it">
-    <string translatable="false" name="aiuto_title">Aiuto</string>
-	<string translatable="false" name="annulla">Annulla</string>
-    <string translatable="false" name="app_name">CriptoCalcolo</string>
-    <string translatable="false" name="avanti">-&gt;</string>
-    <string translatable="false" name="cancella">Cacnella</string>
-    <string translatable="false" name="cifra">Cifra</string>
-    <string translatable="false" name="classifica">Classifica</string>
-    <string translatable="false" name="err_conessione">Impossibile aprire la classifica: controllare la connessione</string>
-    <string translatable="false" name="help">Aiuto</string>
+<resources  xmlns:tools="http://schemas.android.com/tools" tools:locale="en">
+    <string name="aiuto_title">Help</string>
+	<string name="annulla">Undo</string>
+    <string name="app_name">Fruit Puzzle</string>
+    <string name="avanti">-&gt;</string>
+    <string name="cancella">Delete</string>
+    <string name="cifra">Digit</string>
+    <string name="classifica">Leaderboard</string>
+    <string name="err_conessione">Connection unavailable</string>
+    <string name="help">Help</string>
     <string translatable="false" name="indietro">&lt;-</string>
-    <string translatable="false" name="istruction">CriptoCalcolo è un gioco liberamente ispirato a "Calcolo Enigmatico" della Settimana Enigmistica e segue le stesse regole.\n\nDevi associare ad ogni incognita la cifra giusta da 0 a 9, aiutandoti con le operazioni inserite. A schema risolto premi Rispondi per verificare.\n\nTap sull\'incognita per scegliere la cifra da associare o per cancellare la scelta fatta.</string>
-    <string translatable="false" name="linea">Linea</string>
+    <string name="istruction">For each fruit find the right digit (from 0 to 9): enjoy!</string>
+    <string translatable="false" name="linea">Line</string>
     <string translatable="false" name="ok">OK</string>
-    <string translatable="false" name="operazione">operazione</string>
-    <string translatable="false" name="popup_title">Scegli un numero</string>
+    <string translatable="false" name="operazione">op.</string>
+    <string name="popup_title">Choose a digit</string>
     <string translatable="false" name="primo">&lt;-|</string>
-    <string translatable="false" name="primo_err">Questo è il primo enigma</string>
-    <string translatable="false" name="nonrisolto">Non risolto</string>
-    <string translatable="false" name="risolto">Risolto!</string>
-    <string translatable="false" name="risp_tutti_err">Sostituisci prima tutti i simboli con le cifre</string>
-    <string translatable="false" name="risp_sbagliata">Risposta errata: ritenta!</string>
-    <string translatable="false" name="risp_esatta">Risposta esatta: complimenti!</string>
-    <string translatable="false" name="rispondi">Rispondi</string>
-    <string translatable="false" name="scegli_enigma">Seleziona Enigma</string>
-    <string translatable="false" name="site">Sito</string>
-    <string translatable="false" name="uguale">uguale</string>
+    <string name="primo_err">This is the first Puzzle!</string>
+    <string name="nonrisolto">TODO</string>
+    <string name="risolto">DONE!</string>
+    <string name="risp_tutti_err">Replace all of the symbols</string>
+    <string name="risp_sbagliata">You\'re wrong: retry!</string>
+    <string name="risp_esatta">Well done!</string>
+    <string name="rispondi">Try!</string>
+    <string name="todo">TODO</string>
+    <string name="scegli_enigma">Choose a Puzzle</string>
+    <string name="site">Web Site</string>
+    <string translatable="false" name="uguale">=</string>
     <string translatable="false" name="ultimo">|-&gt;</string>
-    <string translatable="false" name="ultimo_err">Questo è l\'ultimo enigma</string>
+    <string name="ultimo_err">This is the last Puzzle!</string>
 
     
 </resources>

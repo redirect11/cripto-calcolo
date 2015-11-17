@@ -1,0 +1,1 @@
+CriptoCalcolo è la versione per Android del gioco Calcolo Enigmatico della Settimana Enigmistica
